@@ -1,3 +1,3 @@
 *.sdf
-x64/
+./DocManagement/x64/
 *.opensdf
