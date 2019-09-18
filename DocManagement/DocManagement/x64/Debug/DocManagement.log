@@ -1,0 +1,39 @@
+﻿生成启动时间为 2019/9/18 14:54:50。
+     1>项目“E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\DocManagement.vcxproj”在节点 2 上(Build 个目标)。
+     1>CustomBuild:
+         Moc'ing DocManagement.h...
+         Uic'ing DocManagement.ui...
+         Rcc'ing DocManagement.qrc...
+     1>RCC : warning : No resources in 'E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\DocManagement.qrc'.
+         
+       QtWork:
+         Uic'ing TableDisp.ui...
+         Moc'ing TableDisp.h...
+       ClCompile:
+         D:\VisualStudio\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\QT\5.9.2\msvc2015_64\include /I.\GeneratedFiles\Debug /ID:\QT\5.9.2\msvc2015_64\include\QtCore /ID:\QT\5.9.2\msvc2015_64\include\QtGui /ID:\QT\5.9.2\msvc2015_64\include\QtANGLE /ID:\QT\5.9.2\msvc2015_64\include\QtSql /ID:\QT\5.9.2\msvc2015_64\include\QtWidgets /ID:\QT\5.9.2\msvc2015_64\include\QtXml /Zi /nologo /W1 /WX- /MP /Od /D UNICODE /D _UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_WIDGETS_LIB /D QT_XML_LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt DocManagement.cpp GeneratedFiles\Debug\moc_DocManagement.cpp main.cpp TableDisp.cpp GeneratedFiles\Debug\moc_TableDisp.cpp
+         DocManagement.cpp
+         moc_DocManagement.cpp
+         main.cpp
+         TableDisp.cpp
+         moc_TableDisp.cpp
+         D:\VisualStudio\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\QT\5.9.2\msvc2015_64\include /I.\GeneratedFiles\Debug /ID:\QT\5.9.2\msvc2015_64\include\QtCore /ID:\QT\5.9.2\msvc2015_64\include\QtGui /ID:\QT\5.9.2\msvc2015_64\include\QtANGLE /ID:\QT\5.9.2\msvc2015_64\include\QtSql /ID:\QT\5.9.2\msvc2015_64\include\QtWidgets /ID:\QT\5.9.2\msvc2015_64\include\QtXml /Zi /nologo /W1 /WX- /MP /Od /D UNICODE /D _UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_WIDGETS_LIB /D QT_XML_LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt GeneratedFiles\qrc_DocManagement.cpp
+         qrc_DocManagement.cpp
+       Link:
+         D:\VisualStudio\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\workspace\file_save_haizeiwang10086\DocManagement\x64\Debug\\DocManagement.exe" /NOLOGO /LIBPATH:D:\QT\5.9.2\msvc2015_64\lib qtmaind.lib Qt5Cored.lib Qt5Core.lib Qt5Guid.lib Qt5Sqld.lib Qt5Widgetsd.lib Qt5Xmld.lib Qt5AxServer.lib Qt5AxContainerd.lib Qt5Gui.lib Qt5AxBased.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"E:\workspace\file_save_haizeiwang10086\DocManagement\x64\Debug\DocManagement.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\workspace\file_save_haizeiwang10086\DocManagement\x64\Debug\DocManagement.lib" /MACHINE:X64 x64\Debug\DocManagement.obj
+         x64\Debug\moc_DocManagement.obj
+         x64\Debug\qrc_DocManagement.obj
+         x64\Debug\main.obj
+         x64\Debug\TableDisp.obj
+         x64\Debug\moc_TableDisp.obj
+     1>Qt5AxContainerd.lib(qaxbase.obj) : warning LNK4099: 未找到 PDB“Qt5AxContainerd.pdb”(使用“Qt5AxContainerd.lib(qaxbase.obj)”或在“E:\workspace\file_save_haizeiwang10086\DocManagement\x64\Debug\Qt5AxContainerd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Qt5AxContainerd.lib(qaxwidget.obj) : warning LNK4099: 未找到 PDB“Qt5AxContainerd.pdb”(使用“Qt5AxContainerd.lib(qaxwidget.obj)”或在“E:\workspace\file_save_haizeiwang10086\DocManagement\x64\Debug\Qt5AxContainerd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Qt5AxContainerd.lib(qaxobject.obj) : warning LNK4099: 未找到 PDB“Qt5AxContainerd.pdb”(使用“Qt5AxContainerd.lib(qaxobject.obj)”或在“E:\workspace\file_save_haizeiwang10086\DocManagement\x64\Debug\Qt5AxContainerd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Qt5AxContainerd.lib(qaxtypes.obj) : warning LNK4099: 未找到 PDB“Qt5AxContainerd.pdb”(使用“Qt5AxContainerd.lib(qaxtypes.obj)”或在“E:\workspace\file_save_haizeiwang10086\DocManagement\x64\Debug\Qt5AxContainerd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Qt5AxContainerd.lib(qaxutils.obj) : warning LNK4099: 未找到 PDB“Qt5AxContainerd.pdb”(使用“Qt5AxContainerd.lib(qaxutils.obj)”或在“E:\workspace\file_save_haizeiwang10086\DocManagement\x64\Debug\Qt5AxContainerd.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Qt5AxBased.lib(qaxtypefunctions.obj) : warning LNK4099: 未找到 PDB“Qt5AxBased.pdb”(使用“Qt5AxBased.lib(qaxtypefunctions.obj)”或在“E:\workspace\file_save_haizeiwang10086\DocManagement\x64\Debug\Qt5AxBased.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+         DocManagement.vcxproj -> E:\workspace\file_save_haizeiwang10086\DocManagement\x64\Debug\DocManagement.exe
+     1>已完成生成项目“E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\DocManagement.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:09.27
