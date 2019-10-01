@@ -1,0 +1,24 @@
+﻿生成启动时间为 2019/9/29 11:00:05。
+     1>项目“E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\DocManagement.vcxproj”在节点 3 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of moc_DocManagement.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_DocManagement.cpp, GeneratedFiles\Release\moc_DocManagement.cpp.
+     1>ClCompile:
+         D:\VisualStudio\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /ID:\QT\5.9.2\msvc2015\include /I.\GeneratedFiles\Release /ID:\QT\5.9.2\msvc2015\include\QtCore /ID:\QT\5.9.2\msvc2015\include\QtGui /ID:\QT\5.9.2\msvc2015\include\QtANGLE /ID:\QT\5.9.2\msvc2015\include\QtSql /ID:\QT\5.9.2\msvc2015\include\QtWidgets /ID:\QT\5.9.2\msvc2015\include\QtXml /IE:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow /IE:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow\GeneratedFiles /Zi /nologo /W1 /WX- /O2 /Oy- /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt DocManagement.cpp GeneratedFiles\Debug\moc_DocManagement.cpp GeneratedFiles\Release\moc_DocManagement.cpp main.cpp
+         DocManagement.cpp
+         moc_DocManagement.cpp
+         moc_DocManagement.cpp
+         main.cpp
+         正在生成代码...
+       Link:
+         D:\VisualStudio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\workspace\file_save_haizeiwang10086\QtSearchWindow\Release\\DocManagement.exe" /NOLOGO /LIBPATH:D:\QT\5.9.2\msvc2015\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Sql.lib Qt5Widgets.lib Qt5Xml.lib Qt5AxContainer.lib Qt5AxBase.lib Qt5AxServer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\workspace\file_save_haizeiwang10086\QtSearchWindow\Release\DocManagement.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\workspace\file_save_haizeiwang10086\QtSearchWindow\Release\DocManagement.lib" /MACHINE:X86 /SAFESEH Release\BatchEditName.obj
+         Release\DocManagement.obj
+         Release\moc_DocManagement.obj
+         Release\qrc_DocManagement.obj
+         Release\moc_DocManagement.obj
+         Release\main.obj
+         Release\moc_BatchEditName.obj
+         DocManagement.vcxproj -> E:\workspace\file_save_haizeiwang10086\QtSearchWindow\Release\DocManagement.exe
+     1>已完成生成项目“E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\DocManagement.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:06.33

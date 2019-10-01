@@ -3,11 +3,15 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_DocManagement.h"
 #include "ActiveQt/qaxwidget.h"
-#include "TableDisp.h"
+#include "SearchWindowVirtualBase.h"
+#include "BatchEditName.h"
 
 #ifdef WIN32  
 #pragma execution_character_set("utf-8")  
 #endif
+
+typedef SearchWindowVirtualBase*(*SearchWindow)();
+typedef bool(*FreeSearchWindow)();
 
 class DocManagement : public QMainWindow
 {
@@ -17,6 +21,8 @@ public:
     DocManagement(QWidget *parent = Q_NULLPTR);
 private:
     Ui::DocManagementClass ui;
-    TableDisp subWidget;
     QAxWidget *officeContent;
+    SearchWindowVirtualBase *sechWnd;
+    SearchWindow pSearchWindow;
+    BatchEditName batEditWnd;
 };

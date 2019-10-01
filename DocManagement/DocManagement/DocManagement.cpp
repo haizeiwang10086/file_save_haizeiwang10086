@@ -1,11 +1,26 @@
 #include "DocManagement.h"
 #include "qfiledialog.h"
 #include "qaction.h"
-
+#include "windows.h"
+#include "tchar.h"
+#include <QMessageBox>
+#include <qdebug.h>
 
 DocManagement::DocManagement(QWidget *parent)
     : QMainWindow(parent)
 {
+    HINSTANCE hDll = LoadLibrary(_T("QtSearchWindow.dll"));
+    if (NULL == hDll)
+    {
+        QMessageBox::warning(this, "警告", "动态库加载失败！");
+    }
+    pSearchWindow = (SearchWindow)GetProcAddress(hDll, "createSearchWindow");
+    if(NULL== pSearchWindow)
+    {
+        QMessageBox::warning(this, "警告", "动态库内部函数调用失败！");
+    }
+
+    sechWnd = pSearchWindow();
     ui.setupUi(this);
     QToolBar *pQtr = addToolBar("tool bar");
     QAction  *pQatAdd = pQtr->addAction("添加");
@@ -20,8 +35,6 @@ DocManagement::DocManagement(QWidget *parent)
             
             if (fileName.endsWith(".docx") || fileName.endsWith(".doc"))
             {
-                try
-                {
                     //officeContent = new QAxWidget("Word.Document", ui.docDisp);
                     officeContent = new QAxWidget("Word.Application", ui.docDisp); 
                     int width=ui.docDisp->width();
@@ -31,12 +44,7 @@ DocManagement::DocManagement(QWidget *parent)
                     officeContent->setControl(fileName);
                     officeContent->show();
 
-                }
-                catch (const std::exception& e)
-                {
-                    int a = 1;
-                }
-               
+ 
             }
         });
 
@@ -44,9 +52,16 @@ DocManagement::DocManagement(QWidget *parent)
         [=]()
         {
             hide();
-            subWidget.show();
+            sechWnd->show();
     });
     
-    
+    QAction *batchEditName = pQtr->addAction("批量修改");
+    connect(batchEditName,&QAction::triggered,
+        [=]()
+        {
+           
+            batEditWnd.show();
+            
+        });
     
 }

@@ -38,7 +38,7 @@ Widget::Widget(QWidget *parent) :
     query.prepare("insert into info(title, content) values(?,?)")
     //QSqlDatabase db1=QSqlDatabase::addDatabase("QMYSQL","a");//第二个参数是名字,没有任何意义，创建QSqlQuery query（db1）;必须制定db1
 
-
+sqlStr = insert into info (title,content) values('我' ,'你')
 }
 
 Widget::~Widget()
