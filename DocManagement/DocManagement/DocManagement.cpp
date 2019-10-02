@@ -25,6 +25,8 @@ DocManagement::DocManagement(QWidget *parent)
     QToolBar *pQtr = addToolBar("tool bar");
     QAction  *pQatAdd = pQtr->addAction("添加");
     QAction  *pQatSearch = pQtr->addAction("查找");
+	QAction *batchEditName = pQtr->addAction("批量修改");
+	QAction *pLinkDb = pQtr->addAction("链接数据库");
 
     connect(pQatAdd,&QAction::triggered,
         [=]() mutable
@@ -55,13 +57,34 @@ DocManagement::DocManagement(QWidget *parent)
             sechWnd->show();
     });
     
-    QAction *batchEditName = pQtr->addAction("批量修改");
+    
     connect(batchEditName,&QAction::triggered,
         [=]()
         {
-           
             batEditWnd.show();
-            
         });
-    
+
+	connect(pLinkDb,&QAction::triggered,
+		[=]()
+		{
+			dbDlg.readConfig();
+			dbDlg.exec();
+		});
+	void (DataBaseLinkDialog::*linkSignal)(QString dbName, QString userName, QString password) = &DataBaseLinkDialog::dataBaseLinkSignal;
+	connect(&dbDlg, linkSignal, this, &DocManagement::linkDb);
+
+}
+
+void DocManagement::linkDb(QString dbName, QString userName, QString password)
+{
+	QString desc;
+	bool isInit=sechWnd->dbInit(dbName, userName, password, desc);
+	if (isInit)
+	{
+		QMessageBox::about(this, QStringLiteral("消息"), desc);
+	}
+	else
+	{
+		QMessageBox::warning(this, QStringLiteral("消息"), desc);
+	}
 }

@@ -1,12 +1,11 @@
 #pragma once
 #include "qtsearchwindow_global.h"
-#include "ui_SearchWindow.h"
-#include <QWidget>
-class  SearchWindowVirtualBase : public QWidget
+
+class  SearchWindowVirtualBase
 {
 public:
-    Ui::SearchWindow sechWnd;
-
+	virtual bool show() = 0;
+	virtual bool dbInit(QString dbName, QString userName, QString password,QString &desc) = 0;
 };
 
 extern "C" QTSEARCHWINDOW_EXPORT SearchWindowVirtualBase* createSearchWindow();

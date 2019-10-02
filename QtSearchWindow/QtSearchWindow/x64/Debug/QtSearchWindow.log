@@ -1,0 +1,22 @@
+﻿生成启动时间为 2019/10/1 星期二 下午 9:52:43。
+     1>项目“F:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow\QtSearchWindow.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\program files\VisualStudio2015\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I.\GeneratedFiles\Debug /I.\GeneratedFiles /I. /ID:\QT\5.9.2\msvc2015_64\include /I.\GeneratedFiles\Debug /ID:\QT\5.9.2\msvc2015_64\include\QtCore /ID:\QT\5.9.2\msvc2015_64\include\QtGui /ID:\QT\5.9.2\msvc2015_64\include\QtANGLE /ID:\QT\5.9.2\msvc2015_64\include\QtSql /ID:\QT\5.9.2\msvc2015_64\include\QtWidgets /ID:\QT\5.9.2\msvc2015_64\include\QtXml /ID:\QT\5.9.2\msvc2015_64\include\QtXmlPatterns /Zi /nologo /W1 /WX- /MP /Od /D UNICODE /D _UNICODE /D WIN32 /D WIN64 /D QT_CORE_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_WIDGETS_LIB /D QT_XML_LIB /D QT_XMLPATTERNS_LIB /D QTSEARCHWINDOW_LIB /D _WINDLL /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt QSearchWindowControl.cpp QtNewWindow.cpp QtSearchWindow.cpp
+         QSearchWindowControl.cpp
+         QtNewWindow.cpp
+         QtSearchWindow.cpp
+         D:\program files\VisualStudio2015\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I.\GeneratedFiles\Debug /I.\GeneratedFiles /I. /ID:\QT\5.9.2\msvc2015_64\include /I.\GeneratedFiles\Debug /ID:\QT\5.9.2\msvc2015_64\include\QtCore /ID:\QT\5.9.2\msvc2015_64\include\QtGui /ID:\QT\5.9.2\msvc2015_64\include\QtANGLE /ID:\QT\5.9.2\msvc2015_64\include\QtSql /ID:\QT\5.9.2\msvc2015_64\include\QtWidgets /ID:\QT\5.9.2\msvc2015_64\include\QtXml /ID:\QT\5.9.2\msvc2015_64\include\QtXmlPatterns /Zi /nologo /W1 /WX- /MP /Od /D UNICODE /D _UNICODE /D WIN32 /D WIN64 /D QT_CORE_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_WIDGETS_LIB /D QT_XML_LIB /D QT_XMLPATTERNS_LIB /D QTSEARCHWINDOW_LIB /D _WINDLL /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fp"x64\Debug\QtSearchWindow.pch" /Fa"x64\Debug\\" /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /errorReport:prompt GeneratedFiles\Debug\moc_QtNewWindow.cpp
+         moc_QtNewWindow.cpp
+       Link:
+         D:\program files\VisualStudio2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Debug\\QtSearchWindow.dll" /NOLOGO /LIBPATH:D:\QT\5.9.2\msvc2015_64\lib qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Sqld.lib Qt5Widgetsd.lib Qt5Xmld.lib Qt5XmlPatternsd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Debug\QtSearchWindow.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Debug\QtSearchWindow.lib" /MACHINE:X64 /DLL x64\Debug\app.res
+         x64\Debug\QtSearchWindow.res
+         x64\Debug\QSearchWindowControl.obj
+         x64\Debug\QtNewWindow.obj
+         x64\Debug\QtSearchWindow.obj
+         x64\Debug\moc_QtNewWindow.obj
+         QtSearchWindow.vcxproj -> F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Debug\QtSearchWindow.dll
+     1>已完成生成项目“F:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow\QtSearchWindow.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:07.05

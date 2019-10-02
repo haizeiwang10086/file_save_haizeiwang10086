@@ -58,6 +58,9 @@
     <ClCompile Include="BatchEditName.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DataBaseLinkDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="DocManagement.h">
@@ -77,14 +80,23 @@
     <ClInclude Include="GeneratedFiles\ui_BatchEditFileName.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_DataBaseLink.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="BatchEditFileName.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="DataBaseLink.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="BatchEditName.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="DataBaseLinkDialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

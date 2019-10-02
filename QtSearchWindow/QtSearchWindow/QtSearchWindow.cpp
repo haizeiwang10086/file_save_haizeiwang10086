@@ -11,15 +11,7 @@ QtSearchWindow::QtSearchWindow()
     stanItemModel = new MItemModel();
     QStringList sl=QSqlDatabase::drivers();
     db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");
-    db.setUserName("root");
-    db.setPassword("root123");
-    db.setDatabaseName("test");
-    if (!db.open())
-    {
-        QMessageBox::warning(this, "¾¯¸æ", db.lastError().text());
-    }
-   
+       
     query = new QSqlQuery(db);
         
     connect(sechWnd.AddButton,&QPushButton::clicked,
@@ -128,23 +120,6 @@ void QtSearchWindow::copyData()
     }
 }
 
-SearchWindowVirtualBase* createSearchWindow()
-{
-    return new QtSearchWindow();
-}
-bool freeSearchWindow(SearchWindowVirtualBase* sechWnd)
-{
-    if (sechWnd != NULL)
-    {
-        delete sechWnd;
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-    
-}
 
 void QtSearchWindow::resizeEvent(QResizeEvent * event)
 {

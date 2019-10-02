@@ -145,6 +145,7 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="QSearchWindowControl.cpp" />
     <ClCompile Include="QtNewWindow.cpp" />
     <ClCompile Include="QtSearchWindow.cpp" />
   </ItemGroup>
@@ -153,6 +154,7 @@
     <ClInclude Include="GeneratedFiles\ui_SearchWindow.h" />
     <ClInclude Include="MItemModel.h" />
     <QtMoc Include="QtNewWindow.h" />
+    <ClInclude Include="QSearchWindowControl.h" />
     <ClInclude Include="QtSearchWindow.h" />
     <ClInclude Include="qtsearchwindow_global.h" />
     <ClInclude Include="resource.h" />
