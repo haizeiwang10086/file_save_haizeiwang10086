@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtSearchWindow", "QtSearchWindow\QtSearchWindow.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{603716D5-B807-494E-8898-E77D48C1D6C7} = {603716D5-B807-494E-8898-E77D48C1D6C7}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DocManagement", "..\DocManagement\DocManagement\DocManagement.vcxproj", "{603716D5-B807-494E-8898-E77D48C1D6C7}"
 EndProject

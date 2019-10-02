@@ -27,7 +27,7 @@ bool QSearchWindowControl::dbInit(QString dbName, QString userName, QString pass
 	bool isOpen = db.open();
 	if (isOpen)
 	{
-		desc.append("数据库连接成功!");
+		desc.append(QStringLiteral("数据库连接成功!"));
 	}
 	else
 	{
