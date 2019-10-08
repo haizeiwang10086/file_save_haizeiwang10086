@@ -32,7 +32,7 @@
      <x>90</x>
      <y>80</y>
      <width>281</width>
-     <height>181</height>
+     <height>71</height>
     </rect>
    </property>
   </widget>
@@ -62,7 +62,7 @@
   <widget class="QPushButton" name="save">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>80</x>
      <y>270</y>
      <width>75</width>
      <height>23</height>
@@ -75,7 +75,7 @@
   <widget class="QPushButton" name="cancle">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>280</x>
      <y>270</y>
      <width>75</width>
      <height>23</height>
@@ -83,6 +83,42 @@
    </property>
    <property name="text">
     <string>取消</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_remarks">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>166</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>备注：</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEdit_remarks">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>166</y>
+     <width>281</width>
+     <height>91</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_modify">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>270</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>修改</string>
    </property>
   </widget>
  </widget>

@@ -40,6 +40,9 @@
     <ClCompile Include="QSearchWindowControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BrowseDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QtSearchWindow.h">
@@ -63,6 +66,9 @@
     <ClInclude Include="QSearchWindowControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_Browse.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="qtsearchwindow_global.h">
@@ -76,9 +82,15 @@
     <QtUic Include="New.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="Browse.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="QtNewWindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="BrowseDlg.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

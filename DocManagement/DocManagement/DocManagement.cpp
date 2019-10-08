@@ -54,6 +54,7 @@ DocManagement::DocManagement(QWidget *parent)
         [=]()
         {
             hide();
+            sechWnd->showData();
             sechWnd->show();
     });
     

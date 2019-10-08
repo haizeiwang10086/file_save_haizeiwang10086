@@ -12,21 +12,22 @@ bool QSearchWindowControl::show()
 bool QSearchWindowControl::dbInit(QString dbName, QString userName, QString password, QString &desc)
 {
 	
-	/*sechWnd.db.setHostName("localhost");
+	sechWnd.db.setHostName("localhost");
 	sechWnd.db.setUserName(userName);
 	sechWnd.db.setPassword(password);
-	sechWnd.db.setDatabaseName(dbName);*/
-
-	QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+	sechWnd.db.setDatabaseName(dbName);
+	/*QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
 	
 	db.setDatabaseName(dbName);
 	db.setHostName("localhost");
 	db.setUserName(userName);
-	db.setPassword(password);
+	db.setPassword(password);*/
 
-	bool isOpen = db.open();
+	bool isOpen = sechWnd.db.open();
 	if (isOpen)
 	{
+
+        sechWnd.query = new QSqlQuery(sechWnd.db);
 		desc.append(QStringLiteral("数据库连接成功!"));
 	}
 	else
@@ -34,6 +35,11 @@ bool QSearchWindowControl::dbInit(QString dbName, QString userName, QString pass
 		desc.append(sechWnd.db.lastError().text());
 	}
 	return isOpen;
+}
+
+void QSearchWindowControl::showData()
+{
+    sechWnd.showData();
 }
 
 

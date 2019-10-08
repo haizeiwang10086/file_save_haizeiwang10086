@@ -7,10 +7,12 @@ class QtNewWindow :public QWidget
 public :
     QtNewWindow(QWidget *parent=Q_NULLPTR);
     void dealSave();
+    void dealModify();
 public :
     Ui::NewWindow pNWnd;
 
 signals:
-    void  saveSignal(QString title, QString content);
+    void  saveSignal(QString title, QString content,QString remarks);
+    void  modifySignal(QString title, QString content, QString remarks);
     
 };

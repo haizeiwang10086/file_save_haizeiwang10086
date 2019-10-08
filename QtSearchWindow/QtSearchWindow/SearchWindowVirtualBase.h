@@ -6,6 +6,7 @@ class  SearchWindowVirtualBase
 public:
 	virtual bool show() = 0;
 	virtual bool dbInit(QString dbName, QString userName, QString password,QString &desc) = 0;
+    virtual void showData() = 0;
 };
 
 extern "C" QTSEARCHWINDOW_EXPORT SearchWindowVirtualBase* createSearchWindow();

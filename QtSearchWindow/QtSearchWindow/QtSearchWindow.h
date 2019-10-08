@@ -5,6 +5,7 @@
 #include "qsqldatabase.h"
 #include "qsqlquery.h"
 #include "ui_SearchWindow.h"
+#include "BrowseDlg.h"
 
 
 class QTSEARCHWINDOW_EXPORT QtSearchWindow :public QWidget
@@ -18,11 +19,15 @@ public:
 	QStandardItemModel *stanItemModel;
 	QSqlDatabase db;
 	QSqlQuery *query;
-    void dealSave(QString title, QString content);
+    QString editSerial;
+    void dealSave(QString title, QString content, QString remarks);
+    void dealModify(QString title, QString content, QString remarks);
     void showData();
     void deleteData();
     void copyData();
     void recoverData();
+    void browse();
+    void edit();
     void resizeEvent(QResizeEvent * event);
 };
 
