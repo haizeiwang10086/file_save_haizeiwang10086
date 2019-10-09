@@ -9,12 +9,12 @@
 DocManagement::DocManagement(QWidget *parent)
     : QMainWindow(parent)
 {
-    HINSTANCE hDll = LoadLibrary(_T("QtSearchWindow.dll"));
+    HINSTANCE hDll = LoadLibrary(_T("QtQuestWindow.dll"));
     if (NULL == hDll)
     {
         QMessageBox::warning(this, "警告", "动态库加载失败！");
     }
-    pSearchWindow = (SearchWindow)GetProcAddress(hDll, "createSearchWindow");
+    pSearchWindow = (QuestionWindow)GetProcAddress(hDll, "createQuestionWindow");
     if(NULL== pSearchWindow)
     {
         QMessageBox::warning(this, "警告", "动态库内部函数调用失败！");

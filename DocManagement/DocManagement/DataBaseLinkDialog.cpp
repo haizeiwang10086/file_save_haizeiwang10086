@@ -56,36 +56,29 @@ void DataBaseLinkDialog::onPushButtonOk()
 	}
 	else
 	{
-		QStringList confTxt;
+        file.close();
 		QFile fileRead("./config/config.ini");
-		
-		if (fileRead.open(QIODevice::ReadOnly))
+        std::map<QString, QString> mConf;
+        if (fileRead.open(QIODevice::ReadOnly))
 		{
-			file.close();
+			
 			while (!fileRead.atEnd())
 			{
+
 				QString str(fileRead.readLine());
-				QStringList strList = str.split("=");
-				if (!strList[0].compare("data_base_name"))
-				{
-					str= strList[0]+"="+ dbl.lineEdit->text();
-				}
-				else if (!strList[0].compare("user_name"))
-				{
-					str = strList[0] + "=" + dbl.lineEdit_2->text();
-				}
-				else if (!strList[0].compare("db_password"))
-				{
-					str = strList[0] + "=" + dbl.lineEdit_3->text();
-				}
-				confTxt.append(str);
-			}	
+				QStringList strList(str.split("=")) ;
+                mConf.insert(std::pair<QString,QString>(strList[0], strList[1]));
+			}
+            
+            editConfig(mConf, "data_base_name", dbl.lineEdit->text());
+            editConfig(mConf, "user_name", dbl.lineEdit_2->text());
+            editConfig(mConf, "db_password", dbl.lineEdit_3->text());
 		}
 		fileRead.close();
 		file.open(QIODevice::WriteOnly);
-		for (int i = 0; i < confTxt.size(); i++)
+        for (std::map<QString, QString>::iterator it = mConf.begin(); it != mConf.end(); it++)
 		{
-			out<<confTxt[i].toUtf8();
+            out << it->first << "=" << it->second << endl;
 		}
 	}//else end
 	file.close();
@@ -94,6 +87,19 @@ void DataBaseLinkDialog::onPushButtonOk()
 	dbl.lineEdit_2->clear();
 	dbl.lineEdit_3->clear();
 	
+}
+
+void DataBaseLinkDialog::editConfig(std::map<QString, QString> &mConf, QString strConfKey,QString strConfValue)
+{
+    std::map<QString, QString>::iterator iter;
+    if ((iter = mConf.find(strConfKey)) != mConf.end())
+    {
+        iter->second = strConfValue;
+    }
+    else
+    {
+        mConf.insert(std::pair<QString,QString>(strConfKey, strConfValue));
+    }
 }
 
 void DataBaseLinkDialog::onPushButtonTest()
@@ -130,15 +136,15 @@ void DataBaseLinkDialog::readConfig()
 			QStringList confKeyValue = strConf.split("=");
 			if (!confKeyValue[0].compare("data_base_name"))
 			{
-				dbl.lineEdit->setText(confKeyValue[1]);
+				dbl.lineEdit->setText(confKeyValue[1].trimmed());
 			}
 			else if (!confKeyValue[0].compare("user_name"))
 			{
-				dbl.lineEdit_2->setText(confKeyValue[1]);
+				dbl.lineEdit_2->setText(confKeyValue[1].trimmed());
 			}
 			else if (!confKeyValue[0].compare("db_password"))
 			{
-				dbl.lineEdit_3->setText(confKeyValue[1]);
+				dbl.lineEdit_3->setText(confKeyValue[1].trimmed());
 			}
 		}
 	}

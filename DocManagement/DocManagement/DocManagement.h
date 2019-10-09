@@ -3,7 +3,7 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_DocManagement.h"
 #include "ActiveQt/qaxwidget.h"
-#include "SearchWindowVirtualBase.h"
+#include "QuestionWindowVirtualBase.h"
 #include "BatchEditName.h"
 #include "DataBaseLinkDialog.h"
 
@@ -11,8 +11,8 @@
 #pragma execution_character_set("utf-8")  
 #endif
 
-typedef SearchWindowVirtualBase*(*SearchWindow)();
-typedef bool(*FreeSearchWindow)();
+typedef QuestionWindowVirtualBase*(*QuestionWindow)();
+typedef bool(*FreeQuestionWindow)();
 
 class DocManagement : public QMainWindow
 {
@@ -24,8 +24,8 @@ public:
 private:
     Ui::DocManagementClass ui;
     QAxWidget *officeContent;
-    SearchWindowVirtualBase *sechWnd;
-    SearchWindow pSearchWindow;
+    QuestionWindowVirtualBase *sechWnd;
+    QuestionWindow pSearchWindow;
 	DataBaseLinkDialog dbDlg;
     BatchEditName batEditWnd;
 };

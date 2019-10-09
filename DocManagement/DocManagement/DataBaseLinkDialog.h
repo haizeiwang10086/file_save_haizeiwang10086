@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ui_DataBaseLink.h"
+#include <map>
 
 class DataBaseLinkDialog : public QDialog
 {
@@ -8,6 +9,7 @@ class DataBaseLinkDialog : public QDialog
 public:
 	DataBaseLinkDialog(QWidget * parent = NULL);
 	void onPushButtonTest();
+    void editConfig(std::map<QString,QString> &mConf, QString strConfKey, QString strConfValue);
 	void onPushButtonOk();
 	void readConfig();
 
