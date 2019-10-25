@@ -171,11 +171,41 @@
     <ClInclude Include="GeneratedFiles\ui_SearchWindow.h" />
     <ClInclude Include="MItemModel.h" />
     <QtMoc Include="QtNewWindow.h" />
-    <ClInclude Include="QSearchWindowControl.h" />
-    <ClInclude Include="QtSearchWindow.h" />
+    <ClInclude Include="QSearchWindowControl.h">
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtXmlPatterns</IncludePath>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIRX86)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIRX86)\include\QtCore;$(QTDIRX86)\include\QtGui;$(QTDIRX86)\include\QtANGLE;$(QTDIRX86)\include\QtSql;$(QTDIRX86)\include\QtWidgets;$(QTDIRX86)\include\QtXml;$(QTDIRX86)\include\QtXmlPatterns</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_SQL_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_XMLPATTERNS_LIB;QTSEARCHWINDOW_LIB;%(PreprocessorDefinitions);_WINDLL</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtXmlPatterns</IncludePath>
+    </ClInclude>
+    <QtMoc Include="QtSearchWindow.h">
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtXmlPatterns</IncludePath>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIRX86)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIRX86)\include\QtCore;$(QTDIRX86)\include\QtGui;$(QTDIRX86)\include\QtANGLE;$(QTDIRX86)\include\QtSql;$(QTDIRX86)\include\QtWidgets;$(QTDIRX86)\include\QtXml;$(QTDIRX86)\include\QtXmlPatterns</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_SQL_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_XMLPATTERNS_LIB;QTSEARCHWINDOW_LIB;%(PreprocessorDefinitions);_WINDLL</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtXmlPatterns</IncludePath>
+    </QtMoc>
     <ClInclude Include="qtsearchwindow_global.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="SearchWindowVirtualBase.h" />
+    <ClInclude Include="SearchWindowVirtualBase.h">
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtXmlPatterns</IncludePath>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIRX86)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIRX86)\include\QtCore;$(QTDIRX86)\include\QtGui;$(QTDIRX86)\include\QtANGLE;$(QTDIRX86)\include\QtSql;$(QTDIRX86)\include\QtWidgets;$(QTDIRX86)\include\QtXml;$(QTDIRX86)\include\QtXmlPatterns</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_SQL_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_XMLPATTERNS_LIB;QTSEARCHWINDOW_LIB;%(PreprocessorDefinitions);_WINDLL</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtXmlPatterns</IncludePath>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Browse.ui">

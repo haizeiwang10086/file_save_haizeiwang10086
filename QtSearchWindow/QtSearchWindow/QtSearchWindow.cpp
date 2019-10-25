@@ -3,16 +3,17 @@
 #include "qmessagebox.h"
 #include "qsqlerror.h"
 #include "qclipboard.h"
+#include "qfile.h"
+//#include "qfileinfo.h"
 
-QtSearchWindow::QtSearchWindow()
+QtSearchWindow::QtSearchWindow(QWidget *parent)
 {
     sechWnd.setupUi(this);
     pQSW = new QtNewWindow(this);
-    resize(QSize(800, 500));
-    stanItemModel = new MItemModel();
-    QStringList sl=QSqlDatabase::drivers();
-    db = QSqlDatabase::addDatabase("QMYSQL");
-       
+    setWindowTitle(QStringLiteral("信息查询"));
+    
+    //QStringList sl=QSqlDatabase::drivers();
+    
    // query = new QSqlQuery(db);
         
     connect(sechWnd.AddButton,&QPushButton::clicked,
@@ -25,13 +26,58 @@ QtSearchWindow::QtSearchWindow()
     connect(pQSW, &QtNewWindow::saveSignal, this, &QtSearchWindow::dealSave);
     connect(pQSW, &QtNewWindow::modifySignal, this, &QtSearchWindow::dealModify);
     connect(sechWnd.RecoverButton, &QPushButton::clicked, this, &QtSearchWindow::recoverData);
-
+    stanItemModel = new MItemModel();
     sechWnd.tableView->setModel(stanItemModel);
     sechWnd.tableView->horizontalHeader()->setStyleSheet("QHeaderView::section {background:rgb(51, 153, 255);color: black; \
                                                             font-weight: bold;padding-left: 4px;border: 1px solid #6c6c6c;}");
     
-    //showData();
-    
+    resize(QSize(800, 500));
+        
+}
+
+void QtSearchWindow::linkDb()
+{
+    db = QSqlDatabase::addDatabase("QMYSQL");
+    QFile file("./config/config.ini");
+    /*  QFileInfo fileInfo("./config/config.ini");
+    QString path = fileInfo.absoluteFilePath();*/
+    if (!file.exists())
+    {
+        QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("配置文档不存在！"));
+    }
+    else if (file.open(QIODevice::ReadOnly))
+    {
+        std::map<QString, QString> mConf;
+        while (!file.atEnd())
+        {
+            QString str(file.readLine());
+            QStringList strList = str.split("=");
+            mConf.insert(std::pair<QString, QString>(strList[0], strList[1].trimmed()));
+        }
+        if (mConf.find("data_base_name") != mConf.end() &&
+            mConf.find("user_name") != mConf.end() &&
+            mConf.find("db_password") != mConf.end())
+        {
+            db.setDatabaseName(mConf.find("data_base_name")->second);
+            db.setHostName("localhost");
+            db.setUserName(mConf.find("user_name")->second);
+            db.setPassword(mConf.find("db_password")->second);
+            if (db.open())
+            {
+                query = new QSqlQuery(db);
+                isDbOpen = true;
+            }
+        }
+        else
+        {
+            QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("请检查配置文档参数！"));
+        }
+    }
+    else
+    {
+        QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("配置文档打开失败，请检查文档权限！"));
+    }
+
 }
 
 void QtSearchWindow::dealSave(QString title, QString content,QString remarks)
@@ -146,12 +192,13 @@ void QtSearchWindow::browse()
     if (query->next())
     {
         BrowseDlg boe(this);
-        boe.boe.label_title->setText(query->value(1).toString());
-        boe.boe.label_content->setText(query->value(2).toString());
+        boe.boe.text_title->setText(query->value(1).toString());
+        boe.boe.text_content->setText(query->value(2).toString());
         boe.boe.label_remarks->setText(query->value(3).toString());
         boe.exec();
     }
 }
+
 
 void QtSearchWindow::recoverData()
 {
@@ -198,12 +245,33 @@ void QtSearchWindow::edit()
 void QtSearchWindow::resizeEvent(QResizeEvent * event)
 {
     QSize size = this->size();
-    sechWnd.tableView->move(10, 20);
+    sechWnd.tableView->move(10, 25);
     sechWnd.tableView->resize(size.width() - 20, size.height() - 80);
     QSize tableSize = sechWnd.tableView->size();
     sechWnd.tableView->setColumnWidth(0, tableSize.width() / 4);
     sechWnd.tableView->setColumnWidth(1, tableSize.width() *3/ 4-250);
-    sechWnd.AddButton->move(size.width()*5 / 20, size.height() - 50);
-    sechWnd.EditButton->move(size.width() * 2 / 5, size.height() - 50);
-    sechWnd.RecoverButton->move(size.width() * 11 / 20, size.height() - 50);
+    sechWnd.AddButton->move(size.width()*5 / 20, size.height() - 45);
+    sechWnd.EditButton->move(size.width() * 2 / 5, size.height() - 45);
+    sechWnd.RecoverButton->move(size.width() * 11 / 20, size.height() - 45);
+}
+
+bool QtSearchWindow::closeDb()
+{
+    if (isDbOpen)
+    {
+        db.close(); 
+        isDbOpen = false;
+    }
+    return true;
+}
+
+bool QtSearchWindow::openDb()
+{
+    if (!isDbOpen)
+    {
+        linkDb();
+        showData();
+        isDbOpen = true;
+    }
+    return isDbOpen;
 }

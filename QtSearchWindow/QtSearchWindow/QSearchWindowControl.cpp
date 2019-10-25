@@ -3,11 +3,18 @@
 #include "qsqlerror.h"
 
 
+
+QSearchWindowControl::QSearchWindowControl(QWidget *parent)
+{
+    sechWnd.setParent(this);
+}
+
 bool QSearchWindowControl::show()
 {
 	sechWnd.show();
 	return true;
 }
+
 
 bool QSearchWindowControl::dbInit(QString dbName, QString userName, QString password, QString &desc)
 {
@@ -43,9 +50,9 @@ void QSearchWindowControl::showData()
 }
 
 
-SearchWindowVirtualBase* createSearchWindow()
+SearchWindowVirtualBase* createSearchWindow(QWidget *parent)
 {
-	return new QSearchWindowControl();
+    return new QSearchWindowControl(parent);
 }
 bool freeSearchWindow(SearchWindowVirtualBase* sechWnd)
 {
@@ -59,5 +66,21 @@ bool freeSearchWindow(SearchWindowVirtualBase* sechWnd)
 		return false;
 	}
 
+}
+
+void QSearchWindowControl::resizeEvent(QResizeEvent *event)
+{
+    QSize size = this->size();
+    sechWnd.resize(size.width(),size.height()-10);
+}
+
+bool QSearchWindowControl::closeDb()
+{
+    return sechWnd.closeDb();
+}
+
+bool QSearchWindowControl::openDb()
+{
+    return sechWnd.openDb();
 }
 

@@ -37,10 +37,10 @@
     <ClCompile Include="QtNewWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="QSearchWindowControl.cpp">
+    <ClCompile Include="BrowseDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BrowseDlg.cpp">
+    <ClCompile Include="QQuestWindowControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -57,9 +57,6 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="QSearchWindowControl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_Browse.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -67,6 +64,9 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="QuestionWindowVirtualBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QQuestWindowControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

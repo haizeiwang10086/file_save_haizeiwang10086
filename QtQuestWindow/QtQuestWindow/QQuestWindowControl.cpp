@@ -1,15 +1,18 @@
-#include "QSearchWindowControl.h"
+#include "QQuestWindowControl.h"
 #include "qmessagebox.h"
 #include "qsqlerror.h"
 
-
-bool QSearchWindowControl::show()
+QQuestWindowControl::QQuestWindowControl(QWidget *parent)
+{
+    sechWnd.setParent(this);
+}
+bool QQuestWindowControl::show()
 {
 	sechWnd.show();
 	return true;
 }
 
-bool QSearchWindowControl::dbInit(QString dbName, QString userName, QString password, QString &desc)
+bool QQuestWindowControl::dbInit(QString dbName, QString userName, QString password, QString &desc)
 {
 	
 	sechWnd.db.setHostName("localhost");
@@ -37,15 +40,30 @@ bool QSearchWindowControl::dbInit(QString dbName, QString userName, QString pass
 	return isOpen;
 }
 
-void QSearchWindowControl::showData()
+void QQuestWindowControl::showData()
 {
     sechWnd.showData();
 }
 
-
-QuestionWindowVirtualBase* createQuestionWindow()
+void QQuestWindowControl::resizeEvent(QResizeEvent * event)
 {
-	return new QSearchWindowControl();
+    sechWnd.resize(this->size());
+}
+
+bool QQuestWindowControl::closeDb()
+{
+    return sechWnd.closeDb();
+}
+
+bool QQuestWindowControl::openDb()
+{
+    return sechWnd.openDb();
+}
+
+
+QuestionWindowVirtualBase* createQuestionWindow(QWidget *parent)
+{
+	return new QQuestWindowControl(parent);
 }
 bool freeQuestionWindow(QuestionWindowVirtualBase* sechWnd)
 {
@@ -60,4 +78,5 @@ bool freeQuestionWindow(QuestionWindowVirtualBase* sechWnd)
 	}
 
 }
+
 

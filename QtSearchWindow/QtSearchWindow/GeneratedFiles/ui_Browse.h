@@ -19,6 +19,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -34,9 +35,9 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
-    QLabel *label_title;
-    QLabel *label_content;
     QLabel *label_remarks;
+    QTextBrowser *text_content;
+    QTextBrowser *text_title;
 
     void setupUi(QDialog *BrowseWindow)
     {
@@ -73,15 +74,18 @@ public:
         label_3 = new QLabel(BrowseWindow);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(40, 180, 54, 12));
-        label_title = new QLabel(BrowseWindow);
-        label_title->setObjectName(QStringLiteral("label_title"));
-        label_title->setGeometry(QRect(70, 30, 241, 16));
-        label_content = new QLabel(BrowseWindow);
-        label_content->setObjectName(QStringLiteral("label_content"));
-        label_content->setGeometry(QRect(70, 70, 241, 101));
         label_remarks = new QLabel(BrowseWindow);
         label_remarks->setObjectName(QStringLiteral("label_remarks"));
         label_remarks->setGeometry(QRect(80, 180, 211, 51));
+        text_content = new QTextBrowser(BrowseWindow);
+        text_content->setObjectName(QStringLiteral("text_content"));
+        text_content->setGeometry(QRect(71, 69, 281, 101));
+        text_title = new QTextBrowser(BrowseWindow);
+        text_title->setObjectName(QStringLiteral("text_title"));
+        text_title->setGeometry(QRect(70, 26, 281, 21));
+        QFont font;
+        font.setFamily(QString::fromUtf8("\345\256\213\344\275\223"));
+        text_title->setFont(font);
 
         retranslateUi(BrowseWindow);
         QObject::connect(okButton, SIGNAL(clicked()), BrowseWindow, SLOT(accept()));
@@ -98,8 +102,6 @@ public:
         label->setText(QApplication::translate("BrowseWindow", "\346\240\207\351\242\230\357\274\232", Q_NULLPTR));
         label_2->setText(QApplication::translate("BrowseWindow", "\345\206\205\345\256\271\357\274\232", Q_NULLPTR));
         label_3->setText(QApplication::translate("BrowseWindow", "\345\244\207\346\263\250\357\274\232", Q_NULLPTR));
-        label_title->setText(QApplication::translate("BrowseWindow", "TextLabel", Q_NULLPTR));
-        label_content->setText(QApplication::translate("BrowseWindow", "TextLabel", Q_NULLPTR));
         label_remarks->setText(QApplication::translate("BrowseWindow", "TextLabel", Q_NULLPTR));
     } // retranslateUi
 

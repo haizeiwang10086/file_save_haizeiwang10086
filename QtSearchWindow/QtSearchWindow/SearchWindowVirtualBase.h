@@ -1,13 +1,19 @@
 #pragma once
-#include "qtsearchwindow_global.h"
+#include <QtCore/qglobal.h>
+#include <qobject.h>
+#include <qwidget.h>
 
-class  SearchWindowVirtualBase
+class  SearchWindowVirtualBase : public QWidget
 {
+    
 public:
-	virtual bool show() = 0;
-	virtual bool dbInit(QString dbName, QString userName, QString password,QString &desc) = 0;
+    //SignClass closeSign;
+    virtual bool show() = 0;
+    virtual bool dbInit(QString dbName, QString userName, QString password, QString &desc) = 0;
     virtual void showData() = 0;
+    virtual bool closeDb() = 0; 
+    virtual bool openDb() = 0;
+
 };
 
-extern "C" QTSEARCHWINDOW_EXPORT SearchWindowVirtualBase* createSearchWindow();
-extern "C" QTSEARCHWINDOW_EXPORT bool freeSearchWindow(SearchWindowVirtualBase* sechWnd);
+

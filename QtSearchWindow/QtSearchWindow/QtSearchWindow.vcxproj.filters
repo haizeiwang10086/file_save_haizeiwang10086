@@ -45,12 +45,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="QtSearchWindow.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SearchWindowVirtualBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_SearchWindow.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -63,11 +57,14 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="QSearchWindowControl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_Browse.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchWindowVirtualBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QSearchWindowControl.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +88,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="BrowseDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="QtSearchWindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -5,43 +5,54 @@
 #include "tchar.h"
 #include <QMessageBox>
 #include <qdebug.h>
+#include "CustomTabStyle.h"
 
 DocManagement::DocManagement(QWidget *parent)
     : QMainWindow(parent)
 {
-    HINSTANCE hDll = LoadLibrary(_T("QtQuestWindow.dll"));
-    if (NULL == hDll)
+
+    ui.setupUi(this);
+    setWindowTitle(QString::fromUtf16(u"管理工具"));
+    QIcon icon;
+    icon.addFile(":/image/myapp.ico");
+    setWindowIcon(icon);
+    /*MTabWidget * tabWidget = new MTabWidget(this);
+    tabWidget->show();*/
+    ui.tabWidget->tabBar()->setStyle(new CustomTabStyle);
+
+    HINSTANCE hDllQuest = LoadLibrary(_T("QtQuestWindow.dll"));
+    HINSTANCE hDllSech = LoadLibrary(_T("QtSearchWindow.dll"));
+    if (NULL == hDllQuest || NULL == hDllSech)
     {
         QMessageBox::warning(this, "警告", "动态库加载失败！");
     }
-    pSearchWindow = (QuestionWindow)GetProcAddress(hDll, "createQuestionWindow");
-    if(NULL== pSearchWindow)
+    pQuestWindow = (QuestionWindow)GetProcAddress(hDllQuest, "createQuestionWindow");
+    pSechWindow = (SechWindow)GetProcAddress(hDllSech, "createSearchWindow");
+    pFreeSechWND = (FreeSechWindow)GetProcAddress(hDllSech, "freeSearchWindow");
+    if(NULL== pQuestWindow || NULL == pSechWindow)
     {
         QMessageBox::warning(this, "警告", "动态库内部函数调用失败！");
     }
 
-    sechWnd = pSearchWindow();
-    ui.setupUi(this);
+    //btnSign.setParent(this);
     QToolBar *pQtr = addToolBar("tool bar");
     QAction  *pQatAdd = pQtr->addAction("添加");
-    QAction  *pQatSearch = pQtr->addAction("查找");
-	QAction *batchEditName = pQtr->addAction("批量修改");
 	QAction *pLinkDb = pQtr->addAction("链接数据库");
-
+    //pLinkDb->setIcon(QIcon("myapp.ico"));
     connect(pQatAdd,&QAction::triggered,
         [=]() mutable
         {
             QString fileName = QFileDialog::getOpenFileName(this, "添加", "../", "doc(*.txt *.doc *.docx);;all(*.*)");
             QStringList nameList=fileName.split("/");
-            ui.fileNameLists->setText(nameList[nameList.size()-1]);
+            //ui.fileNameLists->setText(nameList[nameList.size()-1]);
             
             if (fileName.endsWith(".docx") || fileName.endsWith(".doc"))
             {
                     //officeContent = new QAxWidget("Word.Document", ui.docDisp);
-                    officeContent = new QAxWidget("Word.Application", ui.docDisp); 
-                    int width=ui.docDisp->width();
-                    int height= ui.docDisp->height();
-                    QRect rect=ui.docDisp->rect();
+                    officeContent = new QAxWidget("Word.Application", docDisp.DDC.textEdit);
+                    int width= docDisp.DDC.textEdit->width();
+                    int height= docDisp.DDC.textEdit->height();
+                    QRect rect= docDisp.DDC.textEdit->rect();
                     officeContent->setGeometry(QRect(20,20,width-20,height-20));
                     officeContent->setControl(fileName);
                     officeContent->show();
@@ -49,22 +60,7 @@ DocManagement::DocManagement(QWidget *parent)
  
             }
         });
-
-    connect(pQatSearch,&QAction::triggered,
-        [=]()
-        {
-            hide();
-            sechWnd->showData();
-            sechWnd->show();
-    });
-    
-    
-    connect(batchEditName,&QAction::triggered,
-        [=]()
-        {
-            batEditWnd.show();
-        });
-
+       
 	connect(pLinkDb,&QAction::triggered,
 		[=]()
 		{
@@ -73,8 +69,19 @@ DocManagement::DocManagement(QWidget *parent)
 		});
 	void (DataBaseLinkDialog::*linkSignal)(QString dbName, QString userName, QString password) = &DataBaseLinkDialog::dataBaseLinkSignal;
 	connect(&dbDlg, linkSignal, this, &DocManagement::linkDb);
+    ui.tabWidget->addTab(&docDisp, "Main");
+    ui.tabWidget->removeTab(0);
+    ui.tabWidget->addTab(&batEditWnd, "batchEdit");
+    questWnd = pQuestWindow(this);
+    ui.tabWidget->addTab(questWnd, "question");
+    sechWnd = pSechWindow(this);
+    ui.tabWidget->addTab(sechWnd, "search");
+    connect(ui.tabWidget, &QTabWidget::currentChanged, this, &DocManagement::dealTabClick);
+
+    resize(1000, 600);
 
 }
+
 
 void DocManagement::linkDb(QString dbName, QString userName, QString password)
 {
@@ -88,4 +95,29 @@ void DocManagement::linkDb(QString dbName, QString userName, QString password)
 	{
 		QMessageBox::warning(this, QStringLiteral("消息"), desc);
 	}
+}
+
+void DocManagement::resizeEvent(QResizeEvent * event)
+{
+    QSize size = this->size();
+    ui.tabWidget->resize(size.width() - 20, size.height() - 20);
+    ui.tabWidget->move(10, 10);
+    QSize twSize = ui.tabWidget->size();
+    //sechWnd->resize(twSize.width()-40, twSize.height()-20);
+    questWnd->resize(twSize.width() - 40, twSize.height()-20);
+    docDisp.resize(twSize.width() - 40, twSize.height()-20);
+}
+
+void DocManagement::dealTabClick(int idex)
+{
+    if (idex == 2)
+    {
+        sechWnd->closeDb();
+        questWnd->openDb();
+    }
+    if (idex == 3)
+    {
+        questWnd->closeDb();
+        sechWnd->openDb();
+    }
 }

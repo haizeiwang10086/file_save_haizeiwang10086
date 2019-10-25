@@ -61,6 +61,12 @@
     <ClCompile Include="DataBaseLinkDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CustomTabStyle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DocDisp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="DocManagement.h">
@@ -83,12 +89,27 @@
     <ClInclude Include="GeneratedFiles\ui_DataBaseLink.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomTabStyle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_DocDisp.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DocDisp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="BatchEditFileName.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="DataBaseLink.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="DocDisp.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -101,8 +122,17 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="app.rc">
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="myapp.ico" />
+    <Image Include="image\myapp.ico">
       <Filter>Resource Files</Filter>
-    </ResourceCompile>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="resource.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
   </ItemGroup>
 </Project>

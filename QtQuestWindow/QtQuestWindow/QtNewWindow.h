@@ -10,6 +10,7 @@ public :
     void dealModify();
 public :
     Ui::NewWindow pNWnd;
+    void resizeEvent(QResizeEvent * event);
 
 signals:
     void  saveSignal(QString title, QString content,QString label);
