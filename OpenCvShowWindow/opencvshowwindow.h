@@ -13,18 +13,25 @@
 #include <thread>
 #include <QApplication>
 #include <QTableView>
+#include <QHeaderView>
+#include <QTextCodec>
 #include "MItemModel.h"
 using namespace cv;
 using namespace std;
+
+#ifdef WIN32  
+#pragma execution_character_set("utf-8")  
+#endif
 
 class OPENCVSHOWWINDOWSHARED_EXPORT OpencvShowWindow :public QWidget
 {
 
 public:
     OpencvShowWindow(QWidget *parent = Q_NULLPTR);
-    bool addImage(QString name, Mat &img);
+    bool image_show(QString name, Mat &img);
     void flush();
     void imageDisp();
+	void resizeEvent(QResizeEvent * event);
 private:
     QImage img;
     QGraphicsView *ImageGraphic;

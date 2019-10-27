@@ -7,10 +7,9 @@
 
 
 namespace Ui {
-    OPENCVSHOWWINDOWSHARED_EXPORT int image_show();
-    OPENCVSHOWWINDOWSHARED_EXPORT void addImage(cv::Mat& image);
+    OPENCVSHOWWINDOWSHARED_EXPORT void image_show(char* name, cv::Mat& image);
     OPENCVSHOWWINDOWSHARED_EXPORT void named_window(char* name);
-    OPENCVSHOWWINDOWSHARED_EXPORT void window_show();
+    OPENCVSHOWWINDOWSHARED_EXPORT void wait_key();
 }
 
 
