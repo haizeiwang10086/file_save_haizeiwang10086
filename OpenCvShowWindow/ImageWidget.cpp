@@ -1,66 +1,6 @@
-//#include "HighGraphicsView.h"
-//
-//HighGraphicsView::HighGraphicsView(QWidget *parent) : QGraphicsView(parent)
-//{
-//    m_scalingOffset = 1;
-//}
-//
-//HighGraphicsView::~HighGraphicsView()
-//{
-//
-//}
-//
-//void HighGraphicsView::paintEvent(QPaintEvent * event)
-//{
-//    QPainter painter(this->viewport());  //¹Ø¼üÕâÒ»¾ä
-//    if (!img.isNull())
-//    {
-//        painter.drawImage(QRect(0, 0, this->size().width(), this->size().height()), img);
-//    }
-//    painter.end();
-//    QGraphicsView::paintEvent(event);
-//
-//}
-//
-//void HighGraphicsView::setImage(QImage image)
-//{
-//    img = image.copy();
-//}
-//
-//void HighGraphicsView::magnify()
-//{
-//    if (m_scalingOffset>1.3)
-//        return;
-//
-//    m_scalingOffset += 0.1;
-//    scaling(m_scalingOffset);
-//}
-//
-//void HighGraphicsView::shrink()
-//{
-//    if (m_scalingOffset<0.9)
-//        return;
-//
-//    m_scalingOffset -= 0.1;
-//    scaling(m_scalingOffset);
-//}
-//
-//void HighGraphicsView::scaling(qreal scaleFactor)
-//{
-//    scale(scaleFactor, scaleFactor);
-//}
-//
-//void HighGraphicsView::wheelEvent(QWheelEvent *event)
-//{
-//    QPoint sroll = event->angleDelta();
-//    sroll.y()>0 ? magnify() : shrink();
-//
-//}
-//
-//
+#include "ImageWidget.h"
 
 
-#include "HighGraphicsView.h"
 #include <QDebug>
 #include <QGraphicsSceneMouseEvent>
 #include <QPointF>
@@ -180,4 +120,3 @@ qreal ImageWidget::getScaleValue() const
 {
     return m_scaleValue;
 }
-
