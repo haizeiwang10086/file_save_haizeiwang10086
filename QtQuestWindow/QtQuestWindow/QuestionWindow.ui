@@ -46,7 +46,11 @@
     </rect>
    </property>
    <property name="text">
-    <string>查找</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="Resource.qrc">
+     <normaloff>:/images/search.ico</normaloff>:/images/search.ico</iconset>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineedit_search_string">
@@ -69,10 +73,16 @@
     </rect>
    </property>
    <property name="text">
-    <string>清空</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="Resource.qrc">
+     <normaloff>:/images/sync.ico</normaloff>:/images/sync.ico</iconset>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="Resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

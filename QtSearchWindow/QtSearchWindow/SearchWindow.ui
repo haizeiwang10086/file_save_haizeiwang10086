@@ -59,7 +59,11 @@
     </rect>
    </property>
    <property name="text">
-    <string>编辑</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/sync.ico</normaloff>images/sync.ico</iconset>
    </property>
   </widget>
  </widget>

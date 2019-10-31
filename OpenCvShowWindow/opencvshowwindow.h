@@ -8,6 +8,7 @@
 #include <QImage>
 #include <QGraphicsView>
 #include <opencv2\opencv.hpp>
+#include <opencv2\core.hpp>
 #include <QString>
 #include <map>
 #include <thread>
@@ -16,6 +17,7 @@
 #include <QHeaderView>
 #include <QTextCodec>
 #include "MItemModel.h"
+#include "MGraphicsView.h"
 using namespace cv;
 using namespace std;
 
@@ -32,12 +34,13 @@ public:
     void flush();
     void imageDisp();
 	void resizeEvent(QResizeEvent * event);
+    void mat2QImage(Mat mat, QImage& rgb);
 private:
     QImage img;
-    QGraphicsView *ImageGraphic;
+    MGraphicsView *ImageGraphic;
     QGraphicsScene  *qgraphicsScene;
     ImageWidget     *m_Image;
-    map<QString, QImage> imgs;
+    map<QString, Mat> imgs;
     QTableView  *tableView;
     QStandardItemModel *stanItemModel;
 };

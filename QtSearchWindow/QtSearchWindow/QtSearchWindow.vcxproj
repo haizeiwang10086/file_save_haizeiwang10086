@@ -221,6 +221,10 @@
     <ResourceCompile Include="app.rc" />
     <ResourceCompile Include="QtSearchWindow.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\sync.ico" />
+    <Image Include="myapp.ico" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />

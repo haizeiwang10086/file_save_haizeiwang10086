@@ -1,11 +1,12 @@
 #include "opencvshowwindow.h"
+
 #include <QPushButton>
 
 
 
 OpencvShowWindow::OpencvShowWindow(QWidget *parent)
 {
-    ImageGraphic=new QGraphicsView();
+    ImageGraphic=new MGraphicsView();
     QPixmap ConvertPixmap = QPixmap::fromImage(img);//The QPixmap class is an off-screen image representation that can be used as a paint device
     qgraphicsScene = new QGraphicsScene;//要用QGraphicsView就必须要有QGraphicsScene搭配着用
     m_Image = new ImageWidget(&ConvertPixmap);//实例化类ImageWidget的对象m_Image，该类继承自QGraphicsItem，是自己写的类
@@ -24,7 +25,13 @@ OpencvShowWindow::OpencvShowWindow(QWidget *parent)
 
 bool OpencvShowWindow::image_show(QString name,Mat &mat)
 {
-    QImage rgb;
+    imgs.insert(pair<QString,Mat>(name, mat));
+    return true;
+}
+
+void OpencvShowWindow::mat2QImage(Mat mat,QImage& rgb)
+{
+
     if (mat.type() == CV_8UC1)
     {
         QImage image(mat.cols, mat.rows, QImage::Format_Indexed8);
@@ -36,7 +43,7 @@ bool OpencvShowWindow::image_show(QString name,Mat &mat)
         }
         // Copy input Mat  
         uchar *pSrc = mat.data;
-        for (int row = 0; row < mat.rows; row ++)
+        for (int row = 0; row < mat.rows; row++)
         {
             uchar *pDest = image.scanLine(row);
             memcpy(pDest, pSrc, mat.cols);
@@ -45,30 +52,61 @@ bool OpencvShowWindow::image_show(QString name,Mat &mat)
         rgb = image.copy();
     }
     // 8-bits unsigned, NO. OF CHANNELS = 3  
-    else if(mat.type() == CV_8UC3)
+    else if (mat.type() == CV_8UC3)
     {
         // Copy input Mat  
         const uchar *pSrc = (const uchar*)mat.data;
         // Create QImage with same dimensions as input Mat  
         QImage image(pSrc, mat.cols, mat.rows, mat.step, QImage::Format_RGB888);
-        rgb= image.rgbSwapped();
+        rgb = image.rgbSwapped();
     }
-    else if(mat.type() == CV_8UC4)
+    else if (mat.type() == CV_8UC4)
     {
-        qDebug() << "CV_8UC4";
-        // Copy input Mat  
+
         const uchar *pSrc = (const uchar*)mat.data;
         // Create QImage with same dimensions as input Mat  
         QImage image(pSrc, mat.cols, mat.rows, mat.step, QImage::Format_ARGB32);
         rgb = image.copy();
     }
-    else 
+    else
     {
-        qDebug() << "ERROR: Mat could not be converted to QImage.";
+        Mat dst;
+               
+        if (mat.channels() == 1)
+        {
+            double m, M, scale, shift;
+            minMaxLoc(mat, &m, &M, NULL, NULL);
+            scale = 255 / (M - m);
+            shift = -m*scale;
+            dst = mat*scale + shift;
+            dst.convertTo(dst, CV_8UC1);
+            uchar *pSrc = dst.data;
+            QImage image(mat.cols, mat.rows, QImage::Format_Indexed8);
+            image.setColorCount(256);
+            for (int i = 0; i < 256; i++)
+            {
+                image.setColor(i, qRgb(i, i, i));
+            }
+
+            for (int r = 0; r < mat.rows; r++)
+            {
+                uchar *pDst = image.scanLine(r);
+                memcpy(pDst, pSrc, mat.cols);
+                pSrc += dst.step;
+            }
+            rgb = image.copy();
+           
+          
+        }
+        else
+        {
+            const uchar *pSrc = (const uchar *)dst.data;
+            QImage image(pSrc, mat.cols, mat.rows, dst.step, QImage::Format_BGR30);
+            rgb = image.copy();
+        }
+
     }
-        
-    imgs.insert(pair<QString,QImage>(name, rgb));
-    return true;
+
 }
 
 void OpencvShowWindow::flush()
@@ -79,7 +117,7 @@ void OpencvShowWindow::flush()
     QSize size = tableView->size();
     tableView->setColumnWidth(0, size.width());
 	
-    for (map<QString, QImage>::iterator it = imgs.begin(); it != imgs.end(); it++)
+    for (map<QString, Mat>::iterator it = imgs.begin(); it != imgs.end(); it++)
     {
 		QList<QStandardItem*> newRow;
 		stanItemModel->appendRow(newRow);
@@ -98,14 +136,17 @@ void OpencvShowWindow::imageDisp()
 {
 	QPushButton *btn = (QPushButton *)sender();
     qgraphicsScene->clear();
-    map<QString, QImage>::iterator it = imgs.find(btn->property("varName").toString());
-    QImage image = it->second;
-    QPixmap ConvertPixmap = QPixmap::fromImage(image);//The QPixmap class is an off-screen image representation that can be used as a paint device
+    map<QString, Mat>::iterator it = imgs.find(btn->property("varName").toString());
+    Mat image = it->second;
+    QImage qImg;
+    mat2QImage(image, qImg);
+    QPixmap ConvertPixmap = QPixmap::fromImage(qImg);//The QPixmap class is an off-screen image representation that can be used as a paint device
     m_Image = new ImageWidget(&ConvertPixmap);//实例化类ImageWidget的对象m_Image，该类继承自QGraphicsItem，是自己写的类
     int nwith = ImageGraphic->width();//获取界面控件Graphics View的宽度
     int nheight = ImageGraphic->height();//获取界面控件Graphics View的高度
     m_Image->setQGraphicsViewWH(nwith, nheight);
     qgraphicsScene->addItem(m_Image);
+    ImageGraphic->setShowImage(image);
 }
 
 void OpencvShowWindow::resizeEvent(QResizeEvent * event)

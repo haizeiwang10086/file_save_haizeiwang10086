@@ -4,6 +4,7 @@
 #include "qsqlerror.h"
 #include "qclipboard.h"
 #include "qfile.h"
+#include "resource.h"
 //#include "qfileinfo.h"
 
 QtSearchWindow::QtSearchWindow(QWidget *parent)
@@ -32,6 +33,9 @@ QtSearchWindow::QtSearchWindow(QWidget *parent)
                                                             font-weight: bold;padding-left: 4px;border: 1px solid #6c6c6c;}");
     
     resize(QSize(800, 500));
+    QIcon icon;
+    icon.addFile("sync.ico");
+    sechWnd.EditButton->setIcon(icon);
         
 }
 

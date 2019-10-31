@@ -188,7 +188,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>opencv_world341.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world344.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;D:\OpenCV\opencv\build\x64\vc14\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>Debug</GenerateDebugInformation>
@@ -293,11 +293,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ImageWidget.cpp" />
+    <ClCompile Include="MGraphicsView.cpp" />
     <ClCompile Include="opencvshowwindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cvshow.h" />
     <ClInclude Include="ImageWidget.h" />
+    <ClInclude Include="MGraphicsView.h" />
     <ClInclude Include="MItemModel.h" />
     <ClInclude Include="opencvshowwindow.h" />
     <ClInclude Include="opencvshowwindow_global.h" />

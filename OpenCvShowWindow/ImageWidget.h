@@ -9,6 +9,7 @@
 #include <QDragEnterEvent>
 #include <QGraphicsSceneWheelEvent>
 #include <QGraphicsItem>
+#include <QKeyEvent>
 
 class ImageWidget :public QGraphicsItem
 {
@@ -22,6 +23,7 @@ public:
     void    mousePressEvent(QGraphicsSceneMouseEvent *event);
     void    mouseMoveEvent(QGraphicsSceneMouseEvent *event);
     void    mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+    
     qreal   getScaleValue() const;
     void    setQGraphicsViewWH(int nwidth, int nheight);
 private:

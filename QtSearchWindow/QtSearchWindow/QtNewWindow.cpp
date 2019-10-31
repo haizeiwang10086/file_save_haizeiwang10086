@@ -6,6 +6,9 @@ QtNewWindow::QtNewWindow(QWidget *parent)
     connect(pNWnd.save, &QPushButton::clicked, this, &QtNewWindow::dealSave);
     connect(pNWnd.btn_modify, &QPushButton::clicked, this, &QtNewWindow::dealModify);
 
+    QIcon icon;
+    icon.addFile(":/images\\sync.ico");
+    setWindowIcon(icon);
 }
 
 void QtNewWindow::dealSave()

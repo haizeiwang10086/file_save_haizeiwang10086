@@ -6,6 +6,7 @@
 #include <QPointF>
 #include <QGraphicsSceneDragDropEvent>
 #include <QDrag>
+#include <QApplication>
 #include <math.h>
 
 ImageWidget::ImageWidget(QPixmap *pixmap)
@@ -56,6 +57,15 @@ void ImageWidget::mouseReleaseEvent(QGraphicsSceneMouseEvent *)
 {
     m_isMove = false;//标记鼠标左键已经抬起
 }
+
+//void  ImageWidget::keyPressEvent(QKeyEvent *event)
+//{
+//    if (event->modifiers() == Qt::ControlModifier && QApplication::mouseButtons() == Qt::LeftButton)
+//    {
+//        int a = 1;
+//        qDebug() << a << endl;
+//    }
+//}
 
 
 void ImageWidget::wheelEvent(QGraphicsSceneWheelEvent *event)//鼠标滚轮事件

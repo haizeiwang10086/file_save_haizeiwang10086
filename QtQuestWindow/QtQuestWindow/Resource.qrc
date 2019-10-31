@@ -1,0 +1,6 @@
+<RCC>
+    <qresource>
+      <file>images/sync.ico</file>
+	  <file>images/search.ico</file>
+    </qresource>
+</RCC>

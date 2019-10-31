@@ -44,12 +44,18 @@ public:
         btn_search = new QPushButton(QuestionWindow);
         btn_search->setObjectName(QStringLiteral("btn_search"));
         btn_search->setGeometry(QRect(280, 60, 75, 23));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/images/search.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        btn_search->setIcon(icon);
         lineedit_search_string = new QLineEdit(QuestionWindow);
         lineedit_search_string->setObjectName(QStringLiteral("lineedit_search_string"));
         lineedit_search_string->setGeometry(QRect(60, 61, 221, 20));
         btn_empty = new QPushButton(QuestionWindow);
         btn_empty->setObjectName(QStringLiteral("btn_empty"));
         btn_empty->setGeometry(QRect(360, 60, 75, 23));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/images/sync.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        btn_empty->setIcon(icon1);
 
         retranslateUi(QuestionWindow);
 
@@ -60,8 +66,8 @@ public:
     {
         QuestionWindow->setWindowTitle(QApplication::translate("QuestionWindow", "Form", Q_NULLPTR));
         AddButton->setText(QApplication::translate("QuestionWindow", "\346\226\260\345\273\272", Q_NULLPTR));
-        btn_search->setText(QApplication::translate("QuestionWindow", "\346\237\245\346\211\276", Q_NULLPTR));
-        btn_empty->setText(QApplication::translate("QuestionWindow", "\346\270\205\347\251\272", Q_NULLPTR));
+        btn_search->setText(QString());
+        btn_empty->setText(QString());
     } // retranslateUi
 
 };

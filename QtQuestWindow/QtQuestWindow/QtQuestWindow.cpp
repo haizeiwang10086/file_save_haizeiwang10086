@@ -287,10 +287,12 @@ void QtQuestWindow::resizeEvent(QResizeEvent * event)
     qtnWnd.tableView->setColumnWidth(0, tableSize.width() / 4);
     qtnWnd.tableView->setColumnWidth(1, tableSize.width() *3/ 4-250);
     qtnWnd.AddButton->move(tableSize.width()*9 / 10, 20);
-    qtnWnd.btn_empty->move(tableSize.width() * 4 / 5, 20);
-    qtnWnd.btn_search->move(tableSize.width() * 7 / 10, 20);
+    qtnWnd.btn_empty->move(tableSize.width() * 9 / 10-25, 20);
+    qtnWnd.btn_empty->resize(20, 25);
+    qtnWnd.btn_search->move(tableSize.width() *9 / 10-50, 20);
+    qtnWnd.btn_search->resize(20, 25);
     qtnWnd.lineedit_search_string->move(10, 20);
-    qtnWnd.lineedit_search_string->resize(tableSize.width() * 7 / 10 - 10, qtnWnd.btn_search->size().height());
+    qtnWnd.lineedit_search_string->resize(tableSize.width() * 9 / 10 - 60, qtnWnd.btn_search->size().height());
 
 }
 
