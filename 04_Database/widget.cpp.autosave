@@ -36,7 +36,7 @@ Widget::Widget(QWidget *parent) :
     //query.exec("insert into info(title, content) values('速盘激活码','F9EA0F22-F6E5-3FF5-BDDA-AB7EDD0B7B3B')");
 
     //批量插入
-    query.prepare("insert into info(title, content) values(?,?)")
+    query.prepare("insert into info(title, content) values(?,?)");
     //QSqlDatabase db1=QSqlDatabase::addDatabase("QMYSQL","a");//第二个参数是名字,没有任何意义，创建QSqlQuery query（db1）;必须制定db1
 
     QGraphicsScene qg;

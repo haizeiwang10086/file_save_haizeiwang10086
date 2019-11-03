@@ -1,8 +1,7 @@
 #pragma once
 #include <QGraphicsView>
-#include <opencv2/opencv.hpp>
-
-using namespace cv;
+#include "halconcpp/halconcpp.h"
+using namespace HalconCpp;
 
 class MGraphicsView :public QGraphicsView
 {
@@ -10,6 +9,6 @@ public:
     MGraphicsView(QWidget *parent = Q_NULLPTR);
     ~MGraphicsView() {};
     void  mouseMoveEvent(QMouseEvent * event);
-    void setShowImage(Mat img);
-    Mat showImg;
+    void setShowImage(HObject img);
+	HObject showImg;
 };

@@ -16,8 +16,11 @@
 #include <QTableView>
 #include <QHeaderView>
 #include <QTextCodec>
+#include <QGraphicsScene>
 #include "MItemModel.h"
 #include "MGraphicsView.h"
+#include "ImageWidget.h"
+#include "MGraphicsScene.h"
 using namespace cv;
 using namespace std;
 
@@ -38,7 +41,7 @@ public:
 private:
     QImage img;
     MGraphicsView *ImageGraphic;
-    QGraphicsScene  *qgraphicsScene;
+	MGraphicsScene  *qgraphicsScene;
     ImageWidget     *m_Image;
     map<QString, Mat> imgs;
     QTableView  *tableView;

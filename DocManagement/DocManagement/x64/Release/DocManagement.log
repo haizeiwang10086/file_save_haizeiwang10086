@@ -1,9 +1,14 @@
-﻿生成启动时间为 2019/10/31 13:50:35。
-     1>项目“E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\DocManagement.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2019/10/31 星期四 下午 8:47:56。
+     1>项目“F:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\DocManagement.vcxproj”在节点 2 上(Build 个目标)。
      1>QtRccSetDependencies:
          "D:\QT\5.9.2\msvc2015_64\bin\rcc.exe" --list "resource.qrc" > "x64\Release\rcc_list.txt" 2> nul
+       ClCompile:
+         D:\program files\VisualStudio2015\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I.\GeneratedFiles\Release /I.\GeneratedFiles /I. /ID:\QT\5.9.2\msvc2015_64\include /I.\GeneratedFiles\Release /ID:\QT\5.9.2\msvc2015_64\include\QtCore /ID:\QT\5.9.2\msvc2015_64\include\QtGui /ID:\QT\5.9.2\msvc2015_64\include\QtANGLE /ID:\QT\5.9.2\msvc2015_64\include\QtSql /ID:\QT\5.9.2\msvc2015_64\include\QtWidgets /ID:\QT\5.9.2\msvc2015_64\include\QtXml /Zi /nologo /W1 /WX- /MP /O2 /D UNICODE /D _UNICODE /D WIN32 /D WIN64 /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_WIDGETS_LIB /D QT_XML_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt DocManagement.cpp GeneratedFiles\Release\moc_DocManagement.cpp main.cpp
+         DocManagement.cpp
+         moc_DocManagement.cpp
+         main.cpp
        Link:
-         D:\VisualStudio\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\\DocManagement.exe" /NOLOGO /LIBPATH:D:\QT\5.9.2\msvc2015_64\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Sql.lib Qt5Widgets.lib Qt5Xml.lib Qt5AxContainer.lib Qt5AxBase.lib Qt5AxServer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\DocManagement.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\DocManagement.lib" /MACHINE:X64 x64\Release\Resource.res
+         D:\program files\VisualStudio2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"F:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\\DocManagement.exe" /NOLOGO /LIBPATH:D:\QT\5.9.2\msvc2015_64\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Sql.lib Qt5Widgets.lib Qt5Xml.lib Qt5AxContainer.lib Qt5AxBase.lib Qt5AxServer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\DocManagement.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\DocManagement.lib" /MACHINE:X64 x64\Release\Resource.res
          x64\Release\BatchEditName.obj
          x64\Release\CustomTabStyle.obj
          x64\Release\DataBaseLinkDialog.obj
@@ -15,9 +20,9 @@
          x64\Release\qrc_resource.obj
          x64\Release\moc_BatchEditName.obj
          x64\Release\moc_DataBaseLinkDialog.obj
-         DocManagement.vcxproj -> E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\DocManagement.exe
-     1>已完成生成项目“E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\DocManagement.vcxproj”(Build 个目标)的操作。
+         DocManagement.vcxproj -> F:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\DocManagement.exe
+     1>已完成生成项目“F:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\DocManagement.vcxproj”(Build 个目标)的操作。
 
 已成功生成。
 
-已用时间 00:00:01.90
+已用时间 00:00:15.44

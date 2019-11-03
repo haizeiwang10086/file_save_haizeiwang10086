@@ -35,9 +35,10 @@ void HalconShowWindow::hobj2QImage(HObject img,QImage& rgb)
     HTuple hv_Width,hv_Height,hv_Channels,hv_Types;
     CountChannels(img, &hv_Channels);
     GetImageType(img, &hv_Types);
+	GetImageSize(img, &hv_Width, &hv_Height);
     if (1 == hv_Channels)
     {
-        if (strcmp(hv_Types[0].S(), "byte"))
+        if (!strcmp(hv_Types[0].S(), "byte"))
         {
             rgb = QImage(hv_Width.I(), hv_Height.I(), QImage::Format_Grayscale8);
             rgb.setColorCount(256);
@@ -46,15 +47,44 @@ void HalconShowWindow::hobj2QImage(HObject img,QImage& rgb)
                 rgb.setColor(i, qRgb(i, i, i));
             }
             HTuple  hv_Pointer, hs_Types;
-            GetImagePointer1(img, &hv_Pointer, &hs_Types, &hv_Width, &hv_Height);
-            uchar *pSrc = reinterpret_cast<uchar *>(&hv_Pointer);
-            memcpy(rgb.bits(), pSrc, hv_Width.I()*hv_Height.I());
+            GetImagePointer1(img, &hv_Pointer, NULL, NULL, NULL);
+            uchar *pSrc = reinterpret_cast<uchar *>(hv_Pointer[0].L());
+			int width = hv_Width.I();
+			int height = hv_Height.I();
+			for (int i = 0; i < height; i++)
+			{
+				uchar *pDest = rgb.scanLine(i);
+				memcpy(pDest, pSrc, width);
+				pSrc += width;
+			}
         }
         else
         {
             return;
         }
     }
+	else if (3 == hv_Channels)
+	{
+		HTuple  hv_R, hv_G, hv_B;
+		int width = hv_Width.I();
+		rgb = QImage(width, hv_Height.I(), QImage::Format_RGB888);
+		
+		GetImagePointer3(img, &hv_R, &hv_G, &hv_B, NULL, NULL, NULL);
+		rgb = QImage(width, hv_Height.I(), QImage::Format_RGB888);
+		uchar *pR = reinterpret_cast<uchar *>(hv_R[0].L());
+		uchar *pG = reinterpret_cast<uchar *>(hv_G[0].L());
+		uchar *pB = reinterpret_cast<uchar *>(hv_B[0].L());
+		for (int i = 0; i<hv_Height.I(); i++)
+		{
+			uchar *pDest = rgb.scanLine(i);
+			for (int j = 0; j<width; j++)
+			{
+				pDest[j * 3] = pR[i*width + j];
+				pDest[j * 3 + 1] = pG[i*width + j];
+				pDest[j * 3 + 2] = pB[i*width + j];
+			}
+		}
+	}
 }
 
 void HalconShowWindow::flush()

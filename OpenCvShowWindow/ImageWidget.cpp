@@ -6,16 +6,22 @@
 #include <QPointF>
 #include <QGraphicsSceneDragDropEvent>
 #include <QDrag>
-#include <QApplication>
+
 #include <math.h>
+#include <QToolTip>
+#include "qwidget.h"
+
 
 ImageWidget::ImageWidget(QPixmap *pixmap)
 {
     m_pix = *pixmap;
-    setAcceptDrops(true);//If enabled is true, this item will accept hover events; otherwise, it will ignore them. By default, items do not accept hover events.
+	QGraphicsItem::setAcceptDrops(true);//If enabled is true, this item will accept hover events; otherwise, it will ignore them. By default, items do not accept hover events.
     m_scaleValue = 0;
     m_scaleDafault = 0;
     m_isMove = false;
+	
+	//setAcceptedMouseButtons(Qt::LeftButton);
+	//setFlags(ItemIsSelectable);//必须加上这句，否则item无法获取到鼠标事件
 }
 
 QRectF ImageWidget::boundingRect() const
@@ -41,8 +47,17 @@ void ImageWidget::mousePressEvent(QGraphicsSceneMouseEvent *event)
     {
         ResetItemPos();//右击鼠标重置大小
     }
+	setFocus();
+	setSelected(true);
 
 }
+
+bool ImageWidget::eventFilter(QObject *watched, QEvent *event)
+{
+	return false;
+}
+
+
 
 void ImageWidget::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
@@ -51,7 +66,33 @@ void ImageWidget::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         QPointF point = (event->pos() - m_startPos)*m_scaleValue;
         moveBy(point.x(), point.y());
     }
+
+	if (QApplication::keyboardModifiers() == Qt::ControlModifier)
+	{
+		QPoint p = event->pos().toPoint();
+		if (showImg.empty())
+		{
+			std::string str("point: " + std::to_string(p.x()) + " , " + std::to_string(p.y()));
+			QToolTip::showText(p, QString(str.c_str()));
+		}
+		else
+		{
+
+			std::string str("point: " + std::to_string(p.x()) + " , " + std::to_string(p.y()) + "\n" + "values: ");
+			//int val = ;
+			QToolTip::showText(p, QString(str.c_str()));
+		}
+	}
+
+	
 }
+
+
+void ImageWidget::setShowImage(Mat img)
+{
+	showImg = img.clone();
+}
+
 
 void ImageWidget::mouseReleaseEvent(QGraphicsSceneMouseEvent *)
 {

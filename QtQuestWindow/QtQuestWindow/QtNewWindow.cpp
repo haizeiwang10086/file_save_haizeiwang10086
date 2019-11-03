@@ -4,10 +4,14 @@
 #include "qdebug.h"
 #include "qfileinfo.h"
 #include <map>
+#include <QIcon>
 
 QtNewWindow::QtNewWindow(QWidget *parent)
 {
     pNWnd.setupUi(this);
+	QIcon icon;
+	icon.addFile(":/images/new.ico");
+	setWindowIcon(icon);
     connect(pNWnd.save, &QPushButton::clicked, this, &QtNewWindow::dealSave);
     connect(pNWnd.btn_modify, &QPushButton::clicked, this, &QtNewWindow::dealModify);
     QFile file("./config/config.ini");

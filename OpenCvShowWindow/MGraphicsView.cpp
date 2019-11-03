@@ -1,9 +1,7 @@
 #include "MGraphicsView.h"
-#include <QApplication>
+//#include <iostream>
 #include <QKeyEvent>
-#include <qDebug>
-#include <QToolTip>
-#include <string>
+
 
 MGraphicsView::MGraphicsView(QWidget *parent)
 {
@@ -11,26 +9,16 @@ MGraphicsView::MGraphicsView(QWidget *parent)
     setMouseTracking(true);
 }
 
-void MGraphicsView::setShowImage(Mat img)
-{
-    showImg = img.clone();
-}
+//bool MGraphicsView::eventFilter(QObject *watched, QEvent *event)
+//{
+//	return false;
+//}
 
-void  MGraphicsView::mouseMoveEvent(QMouseEvent * event)
-{
-    QPoint p = event->pos();
-    if (QApplication::keyboardModifiers() == Qt::ControlModifier)
-    {
-        if (showImg.empty())
-        {
-            std::string str("point: " + std::to_string(p.x()) + " , " + std::to_string(p.y()));
-            QToolTip::showText(mapToGlobal(p), QString(str.c_str()));
-        }
-        else
-        {
-            std::string str("point: " + std::to_string(p.x()) + " , " + std::to_string(p.y()) + "\n" + "values: " + std::to_string(showImg.at<long>(p.x(), p.y())));
-            //int val = ;
-            QToolTip::showText(mapToGlobal(p), QString(str.c_str()));
-        }
-    }
-}
+//void  MGraphicsView::mouseMoveEvent(QMouseEvent *event)
+//{
+//
+//	int a = 1;
+//	std::cout << a << std::endl;
+//}
+
+

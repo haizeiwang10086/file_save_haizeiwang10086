@@ -11,9 +11,9 @@ MGraphicsView::MGraphicsView(QWidget *parent)
     setMouseTracking(true);
 }
 
-void MGraphicsView::setShowImage(Mat img)
+void MGraphicsView::setShowImage(HObject img)
 {
-    showImg = img.clone();
+	CopyObj(img, &showImg,1,1);
 }
 
 void  MGraphicsView::mouseMoveEvent(QMouseEvent * event)
@@ -21,14 +21,17 @@ void  MGraphicsView::mouseMoveEvent(QMouseEvent * event)
     QPoint p = event->pos();
     if (QApplication::keyboardModifiers() == Qt::ControlModifier)
     {
-        if (showImg.empty())
+        if (!showImg.IsInitialized())
         {
             std::string str("point: " + std::to_string(p.x()) + " , " + std::to_string(p.y()));
             QToolTip::showText(mapToGlobal(p), QString(str.c_str()));
         }
         else
         {
-            std::string str("point: " + std::to_string(p.x()) + " , " + std::to_string(p.y()) + "\n" + "values: " + std::to_string(showImg.at<long>(p.x(), p.y())));
+			HTuple hv_GrayValue;
+			GetGrayval(showImg, p.x(), p.y(), &hv_GrayValue);
+			;
+            std::string str("point: " + std::to_string(p.x()) + " , " + std::to_string(p.y()) + "\n" + "values: " + std::string((char *)hv_GrayValue.S().Text()));
             //int val = ;
             QToolTip::showText(mapToGlobal(p), QString(str.c_str()));
         }
