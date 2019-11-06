@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50560
 File Encoding         : 65001
 
-Date: 2019-10-19 11:00:29
+Date: 2019-11-06 13:06:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,7 +25,7 @@ CREATE TABLE `info` (
   `content` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `remarks` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of info
@@ -43,3 +43,6 @@ INSERT INTO `info` VALUES ('37', '无线网', '账号 Daheng 密码：Daheng@123
 INSERT INTO `info` VALUES ('38', '金蝶', 'http://47.92.80.136/K3Cloud/html5/index.aspx', '');
 INSERT INTO `info` VALUES ('39', '工资条查询', 'http://47.92.80.136/K3Cloud/html5/index.aspx', '');
 INSERT INTO `info` VALUES ('40', '建行卡号', '6217000010145761857', 'qdc');
+INSERT INTO `info` VALUES ('41', '建行信用卡', '6259650005734451', '');
+INSERT INTO `info` VALUES ('42', 'coding账号', 'wangzq@daheng-image.com', '邮箱账号');
+INSERT INTO `info` VALUES ('43', 'coding网址', 'http://coding.daheng-imavision.com', '');
