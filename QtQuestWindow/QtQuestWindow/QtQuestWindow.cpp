@@ -55,14 +55,14 @@ void QtQuestWindow::linkDb()
             QStringList strList = str.split("=");
             mConf.insert(std::pair<QString, QString>(strList[0], strList[1].trimmed()));
         }
-        if (mConf.find("data_base_name_qu") != mConf.end() &&
-            mConf.find("user_name_qu") != mConf.end() &&
-            mConf.find("db_password_qu") != mConf.end())
+        if (mConf.find("data_base_name") != mConf.end() &&
+            mConf.find("user_name") != mConf.end() &&
+            mConf.find("db_password") != mConf.end())
         {
-            db.setDatabaseName(mConf.find("data_base_name_qu")->second);
+            db.setDatabaseName(mConf.find("data_base_name")->second);
             db.setHostName("localhost");
-            db.setUserName(mConf.find("user_name_qu")->second);
-            db.setPassword(mConf.find("db_password_qu")->second);
+            db.setUserName(mConf.find("user_name")->second);
+            db.setPassword(mConf.find("db_password")->second);
             if (db.open())
             {
                 query = new QSqlQuery(db);
@@ -205,14 +205,14 @@ void QtQuestWindow::browse()
 
 void QtQuestWindow::on_button_search()
 {
-    QString title = qtnWnd.lineedit_search_string->text();
+    QString title = qtnWnd.lineedit_search_string->text().toLower();
     QString sql("select id,title from question");
     query->exec(sql);
     QString strSql("select * from question where");
     bool isHave = false;
     while (query->next())
     {
-        QString dbTitle = query->value(1).toString();
+        QString dbTitle = query->value(1).toString().toLower();
         
         if (dbTitle.contains(title))
         {

@@ -69,13 +69,13 @@ DocManagement::DocManagement(QWidget *parent)
 		});
 	void (DataBaseLinkDialog::*linkSignal)(QString dbName, QString userName, QString password) = &DataBaseLinkDialog::dataBaseLinkSignal;
 	connect(&dbDlg, linkSignal, this, &DocManagement::linkDb);
-    ui.tabWidget->addTab(&docDisp, "Main");
+    ui.tabWidget->addTab(&docDisp, QString::fromUtf16(u"主窗口"));
     ui.tabWidget->removeTab(0);
-    ui.tabWidget->addTab(&batEditWnd, "batchEdit");
+    ui.tabWidget->addTab(&batEditWnd, QString::fromUtf16(u"批量改名"));
     questWnd = pQuestWindow(this);
-    ui.tabWidget->addTab(questWnd, "question");
+    ui.tabWidget->addTab(questWnd, QString::fromUtf16(u"问题查询"));
     sechWnd = pSechWindow(this);
-    ui.tabWidget->addTab(sechWnd, "search");
+    ui.tabWidget->addTab(sechWnd, QString::fromUtf16(u"信息查询"));
     connect(ui.tabWidget, &QTabWidget::currentChanged, this, &DocManagement::dealTabClick);
 
     resize(1000, 600);

@@ -19,7 +19,7 @@ ImageWidget::ImageWidget(QPixmap *pixmap)
     m_scaleValue = 0;
     m_scaleDafault = 0;
     m_isMove = false;
-	
+    
 	//setAcceptedMouseButtons(Qt::LeftButton);
 	//setFlags(ItemIsSelectable);//必须加上这句，否则item无法获取到鼠标事件
 }
@@ -47,8 +47,7 @@ void ImageWidget::mousePressEvent(QGraphicsSceneMouseEvent *event)
     {
         ResetItemPos();//右击鼠标重置大小
     }
-	setFocus();
-	setSelected(true);
+
 
 }
 
