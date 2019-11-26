@@ -33,12 +33,6 @@
     <ClCompile Include="ImageWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MGraphicsView.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MGraphicsScene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cvshow.h">
@@ -53,13 +47,7 @@
     <ClInclude Include="MItemModel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MGraphicsView.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ImageWidget.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MGraphicsScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

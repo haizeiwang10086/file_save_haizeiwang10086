@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
@@ -29,6 +30,7 @@ public:
     QPushButton *btn_search;
     QLineEdit *lineedit_search_string;
     QPushButton *btn_empty;
+    QComboBox *comboBox_label;
 
     void setupUi(QWidget *QuestionWindow)
     {
@@ -43,19 +45,22 @@ public:
         AddButton->setGeometry(QRect(430, 60, 75, 23));
         btn_search = new QPushButton(QuestionWindow);
         btn_search->setObjectName(QStringLiteral("btn_search"));
-        btn_search->setGeometry(QRect(280, 60, 75, 23));
+        btn_search->setGeometry(QRect(280, 60, 41, 23));
         QIcon icon;
         icon.addFile(QStringLiteral(":/images/search.ico"), QSize(), QIcon::Normal, QIcon::Off);
         btn_search->setIcon(icon);
         lineedit_search_string = new QLineEdit(QuestionWindow);
         lineedit_search_string->setObjectName(QStringLiteral("lineedit_search_string"));
-        lineedit_search_string->setGeometry(QRect(60, 61, 221, 20));
+        lineedit_search_string->setGeometry(QRect(60, 61, 191, 20));
         btn_empty = new QPushButton(QuestionWindow);
         btn_empty->setObjectName(QStringLiteral("btn_empty"));
-        btn_empty->setGeometry(QRect(360, 60, 75, 23));
+        btn_empty->setGeometry(QRect(394, 60, 41, 23));
         QIcon icon1;
         icon1.addFile(QStringLiteral(":/images/sync.ico"), QSize(), QIcon::Normal, QIcon::Off);
         btn_empty->setIcon(icon1);
+        comboBox_label = new QComboBox(QuestionWindow);
+        comboBox_label->setObjectName(QStringLiteral("comboBox_label"));
+        comboBox_label->setGeometry(QRect(320, 60, 69, 22));
 
         retranslateUi(QuestionWindow);
 

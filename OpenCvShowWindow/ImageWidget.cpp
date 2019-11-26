@@ -51,8 +51,12 @@ void ImageWidget::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 }
 
-bool ImageWidget::eventFilter(QObject *watched, QEvent *event)
+bool ImageWidget::event(QEvent *e)
 {
+    if (e->type() == QEvent::MouseMove)
+    {
+        QString str = "";
+    }
 	return false;
 }
 

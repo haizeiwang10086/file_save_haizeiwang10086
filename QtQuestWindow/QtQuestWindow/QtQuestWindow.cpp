@@ -28,6 +28,7 @@ QtQuestWindow::QtQuestWindow():isDbOpen(false)
     connect(pQSW, &QtNewWindow::modifySignal, this, &QtQuestWindow::dealModify);
     connect(qtnWnd.btn_search, &QPushButton::clicked, this, &QtQuestWindow::on_button_search);
     connect(qtnWnd.btn_empty, &QPushButton::clicked, this, &QtQuestWindow::on_button_empty);
+    connect(qtnWnd.comboBox_label, &QComboBox::currentTextChanged, this, &QtQuestWindow::on_comboBox_changed);
 
     qtnWnd.tableView->setModel(stanItemModel);
     qtnWnd.tableView->horizontalHeader()->setStyleSheet("QHeaderView::section {background:rgb(51, 153, 255);color: black; \
@@ -73,6 +74,20 @@ void QtQuestWindow::linkDb()
         {
             QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("请检查配置文档参数！"));
         }
+
+        std::map<QString, QString>::iterator iter;
+        if ((iter = mConf.find("label")) != mConf.end())
+        {
+            QStringList label = iter->second.split(";");
+            label.push_front("all");
+            qtnWnd.comboBox_label->addItems(label);
+        }
+        else
+        {
+            QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("标签加载失败请检查配置文档！"));
+        }
+
+
     }
     else
     {
@@ -91,6 +106,7 @@ void QtQuestWindow::dealSave(QString title, QString content,QString label)
     sqlStr.append(content);
     sqlStr.append("' ,");
     sqlStr.append("'");
+    label.replace("\n", "");
     sqlStr.append(label);
     sqlStr.append("')");
     
@@ -143,7 +159,8 @@ void QtQuestWindow::showData()
         QList<QStandardItem*> newRow;
         QStandardItem *itemTitle = new QStandardItem(query->value(1).toString());
         QStandardItem *itemContent = new QStandardItem(query->value(2).toString());
-        newRow.append(itemTitle);        newRow.append(itemContent);
+        newRow.append(itemTitle);       
+        newRow.append(itemContent);
 
         stanItemModel->appendRow(newRow);
 
@@ -236,6 +253,27 @@ void QtQuestWindow::on_button_search()
     }
 }
 
+void QtQuestWindow::on_comboBox_changed()
+{
+    QString sql("select * from question" );
+    QString comText = qtnWnd.comboBox_label->currentText();
+    if (comText.toLower().compare("all"))
+    {
+        sql = sql + QString(" where label = '" + comText.trimmed() + "'");
+    }
+
+    query->exec(sql);
+
+    if (0!=query->size())
+    {
+        showData();
+    }
+    else
+    {
+        QMessageBox::about(this, QStringLiteral("提示"), QStringLiteral("未查询到相关记录！"));
+    }
+}
+
 void QtQuestWindow::on_button_empty()
 {
     query->exec("select * from question");
@@ -287,12 +325,14 @@ void QtQuestWindow::resizeEvent(QResizeEvent * event)
     qtnWnd.tableView->setColumnWidth(0, tableSize.width() / 4);
     qtnWnd.tableView->setColumnWidth(1, tableSize.width() *3/ 4-250);
     qtnWnd.AddButton->move(tableSize.width()*9 / 10, 20);
-    qtnWnd.btn_empty->move(tableSize.width() * 9 / 10-25, 20);
+    qtnWnd.btn_empty->move(tableSize.width() * 9 / 10-100, 20);
     qtnWnd.btn_empty->resize(20, 25);
-    qtnWnd.btn_search->move(tableSize.width() *9 / 10-50, 20);
+    qtnWnd.btn_search->move(tableSize.width() *9 / 10-125, 20);
     qtnWnd.btn_search->resize(20, 25);
+    qtnWnd.comboBox_label->move(tableSize.width() * 9 / 10 - 75, 21);
+    qtnWnd.comboBox_label->resize(qtnWnd.comboBox_label->size().width(), qtnWnd.AddButton->size().height()-2);
     qtnWnd.lineedit_search_string->move(10, 20);
-    qtnWnd.lineedit_search_string->resize(tableSize.width() * 9 / 10 - 60, qtnWnd.btn_search->size().height());
+    qtnWnd.lineedit_search_string->resize(tableSize.width() * 9 / 10 - 135, qtnWnd.btn_search->size().height());
 
 }
 

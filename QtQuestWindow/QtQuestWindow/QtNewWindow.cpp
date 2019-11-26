@@ -15,9 +15,6 @@ QtNewWindow::QtNewWindow(QWidget *parent)
     connect(pNWnd.save, &QPushButton::clicked, this, &QtNewWindow::dealSave);
     connect(pNWnd.btn_modify, &QPushButton::clicked, this, &QtNewWindow::dealModify);
     QFile file("./config/config.ini");
-    QFileInfo info("./config/config.ini");
-    QString path=info.absoluteFilePath();
-    qDebug() << path << endl;
     if (file.open(QIODevice::ReadOnly))
     {
         std::map<QString, QString> mConf;
@@ -39,6 +36,7 @@ QtNewWindow::QtNewWindow(QWidget *parent)
         if ((iter = mConf.find("label")) != mConf.end())
         {
             QStringList label = iter->second.split(";");
+            label.last().replace("\n", "");
             pNWnd.comboBox_label->addItems(label);
         }
         else

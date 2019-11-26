@@ -22,14 +22,17 @@ DocManagement::DocManagement(QWidget *parent)
 
     HINSTANCE hDllQuest = LoadLibrary(_T("QtQuestWindow.dll"));
     HINSTANCE hDllSech = LoadLibrary(_T("QtSearchWindow.dll"));
-    if (NULL == hDllQuest || NULL == hDllSech)
+    HINSTANCE hDllImgWnd = LoadLibrary(_T("ImageToolWindow.dll"));
+    if (NULL == hDllQuest || NULL == hDllSech || NULL==hDllImgWnd)
     {
         QMessageBox::warning(this, "警告", "动态库加载失败！");
     }
+    pImgToolWnd = (ImageToolWindow)GetProcAddress(hDllImgWnd, "createImageToolWindow");
     pQuestWindow = (QuestionWindow)GetProcAddress(hDllQuest, "createQuestionWindow");
     pSechWindow = (SechWindow)GetProcAddress(hDllSech, "createSearchWindow");
     pFreeSechWND = (FreeSechWindow)GetProcAddress(hDllSech, "freeSearchWindow");
-    if(NULL== pQuestWindow || NULL == pSechWindow)
+    pFreeImgWnd = (freeImageToolWindow)GetProcAddress(hDllImgWnd, "freeImageToolWindow");
+    if(NULL== pQuestWindow || NULL == pSechWindow || NULL == pImgToolWnd)
     {
         QMessageBox::warning(this, "警告", "动态库内部函数调用失败！");
     }
@@ -76,10 +79,12 @@ DocManagement::DocManagement(QWidget *parent)
     ui.tabWidget->addTab(questWnd, QString::fromUtf16(u"问题查询"));
     sechWnd = pSechWindow(this);
     ui.tabWidget->addTab(sechWnd, QString::fromUtf16(u"信息查询"));
+    imgToolWnd = pImgToolWnd(this);
+    ui.tabWidget->addTab(imgToolWnd, QString::fromUtf16(u"图像工具"));
     connect(ui.tabWidget, &QTabWidget::currentChanged, this, &DocManagement::dealTabClick);
 
     resize(1000, 600);
-
+    setAcceptDrops(true);
 }
 
 
@@ -103,9 +108,11 @@ void DocManagement::resizeEvent(QResizeEvent * event)
     ui.tabWidget->resize(size.width() - 20, size.height() - 20);
     ui.tabWidget->move(10, 10);
     QSize twSize = ui.tabWidget->size();
-    //sechWnd->resize(twSize.width()-40, twSize.height()-20);
+    sechWnd->resize(twSize.width()-40, twSize.height()-20);
     questWnd->resize(twSize.width() - 40, twSize.height()-20);
     docDisp.resize(twSize.width() - 40, twSize.height()-20);
+    batEditWnd.resize(twSize.width() - 40, twSize.height() - 20);
+    imgToolWnd->resize(twSize.width() - 40, twSize.height() - 20);
 }
 
 void DocManagement::dealTabClick(int idex)

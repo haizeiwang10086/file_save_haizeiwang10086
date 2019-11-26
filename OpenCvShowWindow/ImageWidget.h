@@ -32,7 +32,7 @@ public:
 	void    mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 	void    mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 	void    setShowImage(Mat img);
-	bool eventFilter(QObject *watched, QEvent *event);
+    bool event(QEvent *e);
 
 	qreal   getScaleValue() const;
 	void    setQGraphicsViewWH(int nwidth, int nheight);

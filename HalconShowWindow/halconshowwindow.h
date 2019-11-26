@@ -2,11 +2,10 @@
 #define OPENCVSHOWWINDOW_H
 
 #include "halconshowwindow_global.h"
-#include "cvshow.h"
+#include "hshow.h"
 #include "ImageWidget.h"
 #include <QWidget>
 #include <QImage>
-#include <QGraphicsView>
 #include <QString>
 #include <map>
 #include <thread>
@@ -14,8 +13,8 @@
 #include <QTableView>
 #include <QHeaderView>
 #include <QTextCodec>
-#include "MItemModel.h"
-#include "MGraphicsView.h"
+#include <QStandardItem>
+#include "ImageWindowWidget.h"
 #include "halconcpp/halconcpp.h"
 using namespace HalconCpp;
 using namespace std;
@@ -29,17 +28,16 @@ class OPENCVSHOWWINDOWSHARED_EXPORT HalconShowWindow :public QWidget
 
 public:
     HalconShowWindow(QWidget *parent = Q_NULLPTR);
-    bool image_show(QString name, HObject &img);
+    bool image_show(QString name, HObject &hobj);
+    bool tuple_show(char* name, HalconCpp::HTuple& tuple);
     void flush();
-    void imageDisp();
+    void disp();
 	void resizeEvent(QResizeEvent * event);
-    void hobj2QImage(HObject mat, QImage& rgb);
+    
 private:
-    QImage img;
-    MGraphicsView *ImageGraphic;
-    QGraphicsScene  *qgraphicsScene;
-    ImageWidget     *m_Image;
+    ImageWindowWidget     *m_OutWnd;
     map<QString, HObject> imgs;
+    map<QString, HTuple> arrays;
     QTableView  *tableView;
     QStandardItemModel *stanItemModel;
 };
@@ -50,13 +48,8 @@ public:
     WndManager();
     ~WndManager()
     {
-        if (wndThread != NULL)
-        {
-            delete wndThread;
-        }
     }
 
-    std::thread *wndThread;
     QApplication *app;
     HalconShowWindow *wnd;
     void setWndName(QString name);

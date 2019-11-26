@@ -292,15 +292,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ImageWidget.cpp" />
-    <ClCompile Include="MGraphicsScene.cpp" />
-    <ClCompile Include="MGraphicsView.cpp" />
     <ClCompile Include="opencvshowwindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cvshow.h" />
     <ClInclude Include="ImageWidget.h" />
-    <ClInclude Include="MGraphicsScene.h" />
-    <ClInclude Include="MGraphicsView.h" />
     <ClInclude Include="MItemModel.h" />
     <ClInclude Include="opencvshowwindow.h" />
     <ClInclude Include="opencvshowwindow_global.h" />

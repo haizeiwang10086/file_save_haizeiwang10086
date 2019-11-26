@@ -31,6 +31,7 @@ public:
     void resizeEvent(QResizeEvent * event);
     void on_button_search();
     void on_button_empty();
+    void on_comboBox_changed();
     bool closeDb();
     bool openDb();
     void linkDb();

@@ -6,9 +6,9 @@
 
 OpencvShowWindow::OpencvShowWindow(QWidget *parent)
 {
-    ImageGraphic=new MGraphicsView();
+    ImageGraphic=new QGraphicsView();
     QPixmap ConvertPixmap = QPixmap::fromImage(img);//The QPixmap class is an off-screen image representation that can be used as a paint device
-    qgraphicsScene = new MGraphicsScene;//要用QGraphicsView就必须要有QGraphicsScene搭配着用
+    qgraphicsScene = new QGraphicsScene;//要用QGraphicsView就必须要有QGraphicsScene搭配着用
     m_Image = new ImageWidget(&ConvertPixmap);//实例化类ImageWidget的对象m_Image，该类继承自QGraphicsItem，是自己写的类
 	qgraphicsScene->addItem(m_Image);//将QGraphicsItem类对象放进QGraphicsScene中
     
@@ -18,10 +18,12 @@ OpencvShowWindow::OpencvShowWindow(QWidget *parent)
     tableView->setModel(stanItemModel);
     tableView->horizontalHeader()->setStyleSheet("QHeaderView::section {background:rgb(51, 153, 255);color: black; \
                                                             font-weight: bold;padding-left: 4px;border: 1px solid #6c6c6c;}");
+    setMouseTracking(true);
+    ImageGraphic->installEventFilter(this);
 
-    
-
-}
+    ImageGraphic->setMouseTracking(true);
+   
+    }
 
 bool OpencvShowWindow::image_show(QString name,Mat &mat)
 {
@@ -159,12 +161,33 @@ void OpencvShowWindow::resizeEvent(QResizeEvent * event)
 	
 	ImageGraphic->setSceneRect(QRectF(-(nwith - 50) / 2, -nheight / 2, nwith - 50, nheight));//使视窗的大小固定在原始大小，不会随图片的放大而放大（默认状态下图片放大的时候视窗两边会自动出现滚动条，并且视窗内的视野会变大），防止图片放大后重新缩小的时候视窗太大而不方便观察图片
 	ImageGraphic->setScene(qgraphicsScene);//Sets the current scene to scene. If scene is already being viewed, this function does nothing.
-	//ImageGraphic->setFocus();//将界面的焦点设置到当前Graphics View控件
+	ImageGraphic->setFocus();//将界面的焦点设置到当前Graphics View控件
 	ImageGraphic->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	ImageGraphic->move(100, 0);
 
 	tableView->move(0, 0);
 	tableView->resize(100, nheight);
+}
+
+bool OpencvShowWindow::eventFilter(QObject *watched, QEvent *env)
+{
+    QMouseEvent *e = static_cast<QMouseEvent *>(env);
+    /*std::string str1("point: " + std::to_string(e->type()));
+    QToolTip::showText(QPoint(0, 0), QString(str1.c_str()));*/
+    if (watched == ImageGraphic)
+    {
+
+        
+        if (e->type() == QEvent::MouseMove)
+        {
+            QPoint p = e->pos();
+            //QRect rect = this->sceneRect().toRect();
+            std::string str("point: " + std::to_string(p.x()) + " , " + std::to_string(p.y()));
+            QToolTip::showText(QPoint(p.x(), p.y() ), QString(str.c_str()));
+        }
+    }
+
+    return false;
 }
 
 

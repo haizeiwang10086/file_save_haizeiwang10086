@@ -294,14 +294,14 @@
   <ItemGroup>
     <ClCompile Include="halconshowwindow.cpp" />
     <ClCompile Include="ImageWidget.cpp" />
-    <ClCompile Include="MGraphicsView.cpp" />
+    <ClCompile Include="ImageWindowWidget.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cvshow.h" />
+    <ClInclude Include="hshow.h" />
     <ClInclude Include="halconshowwindow.h" />
     <ClInclude Include="halconshowwindow_global.h" />
-    <ClInclude Include="ImageWidget.h" />
-    <ClInclude Include="MGraphicsView.h" />
+    <QtMoc Include="ImageWidget.h" />
+    <QtMoc Include="ImageWindowWidget.h" />
     <ClInclude Include="MItemModel.h" />
   </ItemGroup>
   <ItemGroup>

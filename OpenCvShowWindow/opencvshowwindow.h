@@ -17,10 +17,9 @@
 #include <QHeaderView>
 #include <QTextCodec>
 #include <QGraphicsScene>
+#include <QPushButton>
 #include "MItemModel.h"
-#include "MGraphicsView.h"
 #include "ImageWidget.h"
-#include "MGraphicsScene.h"
 using namespace cv;
 using namespace std;
 
@@ -38,10 +37,11 @@ public:
     void imageDisp();
 	void resizeEvent(QResizeEvent * event);
     void mat2QImage(Mat mat, QImage& rgb);
+    bool eventFilter(QObject *watched, QEvent *env);
 private:
     QImage img;
-    MGraphicsView *ImageGraphic;
-	MGraphicsScene  *qgraphicsScene;
+    QGraphicsView *ImageGraphic;
+	QGraphicsScene  *qgraphicsScene;
     ImageWidget     *m_Image;
     map<QString, Mat> imgs;
     QTableView  *tableView;
