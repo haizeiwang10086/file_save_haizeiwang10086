@@ -1,11 +1,12 @@
-e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\qtquestwindow.obj
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\browsedlg.obj
-e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\qquestwindowcontrol.obj
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\qtnewwindow.obj
-e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\moc_qtnewwindow.obj
-e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\moc_qtnewwindow.asm
+e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\qtquestwindow.obj
+e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\qquestwindowcontrol.obj
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\moc_browsedlg.obj
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\moc_browsedlg.asm
+e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\moc_qtnewwindow.obj
+e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\moc_qtnewwindow.asm
+e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\qrc_resource.obj
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\vc140.pdb
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\x64\release\qtquestwindow.ilk
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\x64\release\qtquestwindow.dll
@@ -19,8 +20,10 @@ e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\generatedfile
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\generatedfiles\release\moc_qtnewwindow.cpp
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\x64\release\qtquestwindow.lib
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\x64\release\qtquestwindow.exp
+e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\generatedfiles\qrc_resource.cpp
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\app.res
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\qtquestwindow.res
+e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\.\generatedfiles\qrc_resource.cpp
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\.\generatedfiles\ui_browse.h
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\.\generatedfiles\ui_new.h
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\.\generatedfiles\ui_questionwindow.h
@@ -36,5 +39,7 @@ e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\q
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\qtquestwindow.tlog\rc.command.1.tlog
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\qtquestwindow.tlog\rc.read.1.tlog
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\qtquestwindow.tlog\rc.write.1.tlog
+e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\qtquestwindow.tlog\rcc.read.1u.tlog
+e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\qtquestwindow.tlog\rcc.write.1u.tlog
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\qtquestwindow.tlog\uic.read.1u.tlog
 e:\workspace\file_save_haizeiwang10086\qtquestwindow\qtquestwindow\x64\release\qtquestwindow.tlog\uic.write.1u.tlog

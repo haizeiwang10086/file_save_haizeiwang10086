@@ -24,16 +24,6 @@
      </rect>
     </property>
    </widget>
-   <widget class="ImageWindowWidget" name="out_window" native="true">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>110</y>
-      <width>321</width>
-      <height>321</height>
-     </rect>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -47,14 +37,6 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>ImageWindowWidget</class>
-   <extends>QWidget</extends>
-   <header location="global">ImageWindowWidget.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

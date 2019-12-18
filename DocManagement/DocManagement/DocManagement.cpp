@@ -112,7 +112,7 @@ void DocManagement::resizeEvent(QResizeEvent * event)
     questWnd->resize(twSize.width() - 40, twSize.height()-20);
     docDisp.resize(twSize.width() - 40, twSize.height()-20);
     batEditWnd.resize(twSize.width() - 40, twSize.height() - 20);
-    imgToolWnd->resize(twSize.width() - 40, twSize.height() - 20);
+    imgToolWnd->resize(twSize.width()-80, twSize.height() - 20);
 }
 
 void DocManagement::dealTabClick(int idex)

@@ -9,7 +9,6 @@
 #ifndef UI_IMAGETOOLWINDOW_H
 #define UI_IMAGETOOLWINDOW_H
 
-#include <ImageWindowWidget.h>
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
@@ -28,7 +27,6 @@ class Ui_ImageToolWindow
 public:
     QWidget *centralwidget;
     QTextBrowser *detailBrowser;
-    ImageWindowWidget *out_window;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -42,9 +40,6 @@ public:
         detailBrowser = new QTextBrowser(centralwidget);
         detailBrowser->setObjectName(QStringLiteral("detailBrowser"));
         detailBrowser->setGeometry(QRect(30, 100, 101, 351));
-        out_window = new ImageWindowWidget(centralwidget);
-        out_window->setObjectName(QStringLiteral("out_window"));
-        out_window->setGeometry(QRect(180, 110, 321, 321));
         ImageToolWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ImageToolWindow);
         menubar->setObjectName(QStringLiteral("menubar"));

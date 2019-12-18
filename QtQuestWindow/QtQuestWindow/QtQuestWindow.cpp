@@ -213,9 +213,10 @@ void QtQuestWindow::browse()
     if (query->next())
     {
         BrowseDlg boe(this);
-        boe.boe.text_title->setText(query->value(1).toString());
-        boe.boe.text_content->setText(query->value(2).toString());
-        boe.boe.label_remarks->setText(query->value(3).toString());
+        boe.boe.text_content->setText("<font style='color:blue;font-weight:border;font-size:15pt;'>" + query->value(1).toString() + "</font><br/><br/>");
+        boe.boe.text_content->append(QString(query->value(2).toString()) + "\n\n\n");
+
+        boe.boe.text_content->append(QString::fromUtf16(u"±¸×¢£º") + query->value(3).toString());
         boe.exec();
     }
 }

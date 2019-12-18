@@ -15,7 +15,6 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextBrowser>
 
@@ -24,12 +23,7 @@ QT_BEGIN_NAMESPACE
 class Ui_BrowseWindow
 {
 public:
-    QLabel *label;
-    QLabel *label_2;
-    QLabel *label_3;
-    QLabel *label_remarks;
     QTextBrowser *text_content;
-    QTextBrowser *text_title;
     QPushButton *okButton;
     QPushButton *cancelButton;
 
@@ -38,30 +32,15 @@ public:
         if (BrowseWindow->objectName().isEmpty())
             BrowseWindow->setObjectName(QStringLiteral("BrowseWindow"));
         BrowseWindow->resize(400, 300);
-        label = new QLabel(BrowseWindow);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(30, 30, 54, 12));
-        label_2 = new QLabel(BrowseWindow);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(30, 70, 54, 12));
-        label_3 = new QLabel(BrowseWindow);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(40, 180, 54, 12));
-        label_remarks = new QLabel(BrowseWindow);
-        label_remarks->setObjectName(QStringLiteral("label_remarks"));
-        label_remarks->setGeometry(QRect(80, 180, 211, 51));
         text_content = new QTextBrowser(BrowseWindow);
         text_content->setObjectName(QStringLiteral("text_content"));
-        text_content->setGeometry(QRect(71, 70, 256, 101));
-        text_title = new QTextBrowser(BrowseWindow);
-        text_title->setObjectName(QStringLiteral("text_title"));
-        text_title->setGeometry(QRect(70, 28, 256, 21));
+        text_content->setGeometry(QRect(50, 10, 311, 231));
         okButton = new QPushButton(BrowseWindow);
         okButton->setObjectName(QStringLiteral("okButton"));
-        okButton->setGeometry(QRect(214, 255, 75, 23));
+        okButton->setGeometry(QRect(110, 250, 75, 23));
         cancelButton = new QPushButton(BrowseWindow);
         cancelButton->setObjectName(QStringLiteral("cancelButton"));
-        cancelButton->setGeometry(QRect(295, 255, 75, 23));
+        cancelButton->setGeometry(QRect(200, 250, 75, 23));
 
         retranslateUi(BrowseWindow);
         QObject::connect(okButton, SIGNAL(clicked()), BrowseWindow, SLOT(accept()));
@@ -73,10 +52,6 @@ public:
     void retranslateUi(QDialog *BrowseWindow)
     {
         BrowseWindow->setWindowTitle(QApplication::translate("BrowseWindow", "Browse", Q_NULLPTR));
-        label->setText(QApplication::translate("BrowseWindow", "\346\240\207\351\242\230\357\274\232", Q_NULLPTR));
-        label_2->setText(QApplication::translate("BrowseWindow", "\345\206\205\345\256\271\357\274\232", Q_NULLPTR));
-        label_3->setText(QApplication::translate("BrowseWindow", "\345\244\207\346\263\250\357\274\232", Q_NULLPTR));
-        label_remarks->setText(QApplication::translate("BrowseWindow", "TextLabel", Q_NULLPTR));
         okButton->setText(QApplication::translate("BrowseWindow", "OK", Q_NULLPTR));
         cancelButton->setText(QApplication::translate("BrowseWindow", "Cancel", Q_NULLPTR));
     } // retranslateUi

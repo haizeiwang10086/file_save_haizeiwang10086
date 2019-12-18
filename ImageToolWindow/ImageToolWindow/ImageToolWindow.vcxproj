@@ -182,12 +182,20 @@
     <ClCompile Include="ImageWidget.cpp" />
     <ClCompile Include="ImageWindowWidget.cpp" />
     <ClCompile Include="ResizeWnd.cpp" />
+    <ClCompile Include="SetWndNum.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_ImageToolWindow.h" />
     <ClInclude Include="GeneratedFiles\ui_ResizeWindow.h" />
+    <ClInclude Include="GeneratedFiles\ui_SetWndNum.h" />
     <ClInclude Include="ImageToolWindowControl.h" />
     <ClInclude Include="ImageToolWindow.h" />
+    <QtMoc Include="SetWndNum.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtXmlPatterns</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIRX86)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIRX86)\include\QtCore;$(QTDIRX86)\include\QtGui;$(QTDIRX86)\include\QtANGLE;$(QTDIRX86)\include\QtSql;$(QTDIRX86)\include\QtWidgets;$(QTDIRX86)\include\QtXml;$(QTDIRX86)\include\QtXmlPatterns</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtXmlPatterns;D:\OpenCV\opencv\build\include</IncludePath>
+    </QtMoc>
     <QtMoc Include="ImageWidget.h" />
     <QtMoc Include="ImageWindowWidget.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles</IncludePath>
@@ -208,6 +216,7 @@
   <ItemGroup>
     <QtUic Include="ImageToolWindow.ui" />
     <QtUic Include="ResizeWindow.ui" />
+    <QtUic Include="SetWndNum.ui" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ImageToolWindow.rc" />

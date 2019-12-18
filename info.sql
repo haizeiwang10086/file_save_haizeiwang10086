@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50560
 File Encoding         : 65001
 
-Date: 2019-11-06 13:06:00
+Date: 2019-12-18 10:35:43
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,7 +25,7 @@ CREATE TABLE `info` (
   `content` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `remarks` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of info
@@ -35,14 +35,16 @@ INSERT INTO `info` VALUES ('29', 'RDM', 'http://192.168.70.60:2000', '');
 INSERT INTO `info` VALUES ('30', 'ftp资料', 'ftp://192.168.70.20:6000/pub/', '');
 INSERT INTO `info` VALUES ('31', '财务', 'http://47.92.80.136/k3Cloud', '');
 INSERT INTO `info` VALUES ('32', '速盘激活码', '78325D04-DB3C-DF02-230D-E5B14F2FA8D1', '');
-INSERT INTO `info` VALUES ('33', 'ERP考勤', 'http://115.28.149.68:8080/', '');
+INSERT INTO `info` VALUES ('33', 'ERP考勤', 'http://115.28.149.68:8080/', '用户名和密码都为工号，修改密码在手机app 我的--账号安全--修改密码');
 INSERT INTO `info` VALUES ('34', 'RDM 登录地址内网', 'http://192.168.70.60:2000', '');
 INSERT INTO `info` VALUES ('35', 'RDM 登录地址外网', 'http://106.120.95.66:2000/', '');
 INSERT INTO `info` VALUES ('36', 'QT下载下载网址', 'https://download.qt.io/archive/qt/', '');
 INSERT INTO `info` VALUES ('37', '无线网', '账号 Daheng 密码：Daheng@123', '');
 INSERT INTO `info` VALUES ('38', '金蝶', 'http://47.92.80.136/K3Cloud/html5/index.aspx', '');
-INSERT INTO `info` VALUES ('39', '工资条查询', 'http://47.92.80.136/K3Cloud/html5/index.aspx', '');
+INSERT INTO `info` VALUES ('39', '工资条查询', 'http://47.92.80.136/K3Cloud/html5/index.aspx', '用户名：0509');
 INSERT INTO `info` VALUES ('40', '建行卡号', '6217000010145761857', 'qdc');
 INSERT INTO `info` VALUES ('41', '建行信用卡', '6259650005734451', '');
 INSERT INTO `info` VALUES ('42', 'coding账号', 'wangzq@daheng-image.com', '邮箱账号');
 INSERT INTO `info` VALUES ('43', 'coding网址', 'http://coding.daheng-imavision.com', '');
+INSERT INTO `info` VALUES ('44', 'cmake各版本下载', 'https://cmake.org/files/', '');
+INSERT INTO `info` VALUES ('45', 'Anaconda下载地址', 'https://repo.continuum.io/archive/', '');
