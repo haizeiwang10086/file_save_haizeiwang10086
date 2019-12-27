@@ -43,6 +43,9 @@
     <ClCompile Include="QQuestWindowControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ExportDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QtQuestWindow.h">
@@ -69,6 +72,9 @@
     <ClInclude Include="QQuestWindowControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_ExportDlg.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="qtsearchwindow_global.h">
@@ -85,12 +91,18 @@
     <QtUic Include="QuestionWindow.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="ExportDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="QtNewWindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="BrowseDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="ExportDlg.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

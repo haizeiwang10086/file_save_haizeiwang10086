@@ -1,23 +1,5 @@
-﻿生成启动时间为 2019/11/26 14:35:06。
-     1>项目“E:\workspace\file_save_haizeiwang10086\QtQuestWindow\QtQuestWindow\QtQuestWindow.vcxproj”在节点 2 上(Build 个目标)。
-     1>QtRccSetDependencies:
-         "D:\QT\5.9.2\msvc2015_64\bin\rcc.exe" --list "Resource.qrc" > "x64\Release\rcc_list.txt" 2> nul
-       ClCompile:
-         D:\VisualStudio\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I.\GeneratedFiles\Release /I.\GeneratedFiles /I. /ID:\QT\5.9.2\msvc2015_64\include /I.\GeneratedFiles\Release /ID:\QT\5.9.2\msvc2015_64\include\QtCore /ID:\QT\5.9.2\msvc2015_64\include\QtGui /ID:\QT\5.9.2\msvc2015_64\include\QtANGLE /ID:\QT\5.9.2\msvc2015_64\include\QtSql /ID:\QT\5.9.2\msvc2015_64\include\QtWidgets /ID:\QT\5.9.2\msvc2015_64\include\QtXml /ID:\QT\5.9.2\msvc2015_64\include\QtXmlPatterns /Zi /nologo /W1 /WX- /MP /O2 /D UNICODE /D _UNICODE /D WIN32 /D WIN64 /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_WIDGETS_LIB /D QT_XML_LIB /D QT_XMLPATTERNS_LIB /D QTSEARCHWINDOW_LIB /D _WINDLL /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt QtQuestWindow.cpp
-         QtQuestWindow.cpp
-       Link:
-         D:\VisualStudio\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\\QtQuestWindow.dll" /NOLOGO /LIBPATH:D:\QT\5.9.2\msvc2015_64\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Sql.lib Qt5Widgets.lib Qt5Xml.lib Qt5XmlPatterns.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\QtQuestWindow.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\QtQuestWindow.lib" /MACHINE:X64 /DLL x64\Release\app.res
-         x64\Release\QtQuestWindow.res
-         x64\Release\BrowseDlg.obj
-         x64\Release\QQuestWindowControl.obj
-         x64\Release\QtNewWindow.obj
-         x64\Release\QtQuestWindow.obj
-         x64\Release\qrc_Resource.obj
-         x64\Release\moc_BrowseDlg.obj
-         x64\Release\moc_QtNewWindow.obj
-         QtQuestWindow.vcxproj -> E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\QtQuestWindow.dll
-     1>已完成生成项目“E:\workspace\file_save_haizeiwang10086\QtQuestWindow\QtQuestWindow\QtQuestWindow.vcxproj”(Build 个目标)的操作。
+﻿生成启动时间为 2019/12/27 14:25:37。
 
 已成功生成。
 
-已用时间 00:00:03.40
+已用时间 00:00:00.11

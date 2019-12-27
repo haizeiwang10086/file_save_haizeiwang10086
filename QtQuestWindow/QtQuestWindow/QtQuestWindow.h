@@ -6,9 +6,12 @@
 #include "qsqlquery.h"
 #include "ui_QuestionWindow.h"
 #include "BrowseDlg.h"
+#include "ExportDlg.h"
 #include "qtsearchwindow_global.h"
+#include <QMainWindow>
+#include <QMenuBar>
 
-class QTSEARCHWINDOW_EXPORT QtQuestWindow :public QWidget
+class QTSEARCHWINDOW_EXPORT QtQuestWindow :public QMainWindow
 {
 public:
     QtQuestWindow();
@@ -20,9 +23,13 @@ public:
 	QSqlDatabase db;
 	QSqlQuery *query;
     QString editSerial;
+    QMenuBar *pQMenuBar;
+    ExportDlg *pExtDlg;
+    QStringList label;
     bool isDbOpen;
     void dealSave(QString title, QString content, QString label);
     void dealModify(QString title, QString content, QString label);
+    void dealExport();
     void showData();
     void deleteData();
     void copyData();
@@ -35,6 +42,7 @@ public:
     bool closeDb();
     bool openDb();
     void linkDb();
+    void saveAsDoc(QStringList info);
 };
 
 

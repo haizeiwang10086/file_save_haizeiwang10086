@@ -4,19 +4,23 @@
 #include "qsqlerror.h"
 #include "qclipboard.h"
 #include "qfile.h"
-//#include "qfileinfo.h"
-//#include "qdebug.h"
 #include <map>
-
+#include <QMenu>
+#include <QTextStream>
+#include <ActiveQt/QAxObject>
 
 QtQuestWindow::QtQuestWindow():isDbOpen(false)
 {
     qtnWnd.setupUi(this);
     pQSW = new QtNewWindow(this);
+    pExtDlg = new ExportDlg(this);
     resize(QSize(800, 500));
     stanItemModel = new MItemModel();
- 
-        
+    
+    pQMenuBar = menuBar();
+    pQMenuBar->setStyleSheet("QMenuBar{background-color:rgb(37,199,254)}");
+    QMenu *pQMenu = pQMenuBar->addMenu(QString::fromUtf16(u"功能"));
+    QAction *pExt = pQMenu->addAction(QString::fromUtf16(u"导出"));
     connect(qtnWnd.AddButton,&QPushButton::clicked,
         [=]()
         {
@@ -29,6 +33,9 @@ QtQuestWindow::QtQuestWindow():isDbOpen(false)
     connect(qtnWnd.btn_search, &QPushButton::clicked, this, &QtQuestWindow::on_button_search);
     connect(qtnWnd.btn_empty, &QPushButton::clicked, this, &QtQuestWindow::on_button_empty);
     connect(qtnWnd.comboBox_label, &QComboBox::currentTextChanged, this, &QtQuestWindow::on_comboBox_changed);
+    connect(pExt, &QAction::triggered, this, &QtQuestWindow::dealExport);
+    connect(pExtDlg, &ExportDlg::saveSignal, this, &QtQuestWindow::saveAsDoc);
+    
 
     qtnWnd.tableView->setModel(stanItemModel);
     qtnWnd.tableView->horizontalHeader()->setStyleSheet("QHeaderView::section {background:rgb(51, 153, 255);color: black; \
@@ -78,7 +85,7 @@ void QtQuestWindow::linkDb()
         std::map<QString, QString>::iterator iter;
         if ((iter = mConf.find("label")) != mConf.end())
         {
-            QStringList label = iter->second.split(";");
+            label = iter->second.split(";");
             label.push_front("all");
             qtnWnd.comboBox_label->addItems(label);
         }
@@ -134,6 +141,33 @@ void QtQuestWindow::dealModify(QString title, QString content, QString label)
     QString sql("select * from question");
     query->exec(sql);
     showData();
+}
+
+void QtQuestWindow::dealExport()
+{
+    pExtDlg->ui_extDlg.lineEdit->clear();
+    pExtDlg->setType(label);
+    pExtDlg->exec();
+}
+#include <fstream>
+void QtQuestWindow::saveAsDoc(QStringList info)
+{
+    if (info.size() != 2)
+    {
+        QMessageBox::warning(this, QString::fromUtf16(u"警告"),QString::fromUtf16(u"参数有误！"));
+        return;
+    }
+    QFile outFile(info.at(0));
+    outFile.open(QIODevice::WriteOnly);
+    QTextStream outStream(&outFile);
+    QString sql = "select * from question where label='" + info.at(1)+"'";
+    query->exec(sql);
+    while (query->next())
+    {
+        QString text = QString::fromUtf16(u"标题： ")+query->value(1).toString() + "\n\n" + QString(query->value(2).toString()) + "\n\n\n";
+        outStream << text ;
+    }
+    outFile.close();
 }
 
 void QtQuestWindow::showData()
@@ -320,19 +354,19 @@ void QtQuestWindow::edit()
 void QtQuestWindow::resizeEvent(QResizeEvent * event)
 {
     QSize size = this->size();
-    qtnWnd.tableView->move(10, 50);
+    qtnWnd.tableView->move(10, 60);
     qtnWnd.tableView->resize(size.width() - 20, size.height() - 80);
     QSize tableSize = qtnWnd.tableView->size();
     qtnWnd.tableView->setColumnWidth(0, tableSize.width() / 4);
     qtnWnd.tableView->setColumnWidth(1, tableSize.width() *3/ 4-250);
-    qtnWnd.AddButton->move(tableSize.width()*9 / 10, 20);
-    qtnWnd.btn_empty->move(tableSize.width() * 9 / 10-100, 20);
+    qtnWnd.AddButton->move(tableSize.width()*9 / 10, 30);
+    qtnWnd.btn_empty->move(tableSize.width() * 9 / 10-100, 30);
     qtnWnd.btn_empty->resize(20, 25);
-    qtnWnd.btn_search->move(tableSize.width() *9 / 10-125, 20);
+    qtnWnd.btn_search->move(tableSize.width() *9 / 10-125, 30);
     qtnWnd.btn_search->resize(20, 25);
-    qtnWnd.comboBox_label->move(tableSize.width() * 9 / 10 - 75, 21);
+    qtnWnd.comboBox_label->move(tableSize.width() * 9 / 10 - 75, 31);
     qtnWnd.comboBox_label->resize(qtnWnd.comboBox_label->size().width(), qtnWnd.AddButton->size().height()-2);
-    qtnWnd.lineedit_search_string->move(10, 20);
+    qtnWnd.lineedit_search_string->move(10, 30);
     qtnWnd.lineedit_search_string->resize(tableSize.width() * 9 / 10 - 135, qtnWnd.btn_search->size().height());
 
 }
