@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50560
 File Encoding         : 65001
 
-Date: 2019-12-18 10:35:43
+Date: 2019-12-27 17:12:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,7 +25,7 @@ CREATE TABLE `info` (
   `content` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `remarks` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of info
@@ -47,4 +47,3 @@ INSERT INTO `info` VALUES ('41', '建行信用卡', '6259650005734451', '');
 INSERT INTO `info` VALUES ('42', 'coding账号', 'wangzq@daheng-image.com', '邮箱账号');
 INSERT INTO `info` VALUES ('43', 'coding网址', 'http://coding.daheng-imavision.com', '');
 INSERT INTO `info` VALUES ('44', 'cmake各版本下载', 'https://cmake.org/files/', '');
-INSERT INTO `info` VALUES ('45', 'Anaconda下载地址', 'https://repo.continuum.io/archive/', '');
