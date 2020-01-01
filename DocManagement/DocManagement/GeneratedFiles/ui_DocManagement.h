@@ -29,6 +29,7 @@ public:
     QWidget *centralWidget;
     QTabWidget *tabWidget;
     QWidget *tab;
+    QWidget *tab_2;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -47,6 +48,9 @@ public:
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
         tabWidget->addTab(tab, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName(QStringLiteral("tab_2"));
+        tabWidget->addTab(tab_2, QString());
         DocManagementClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(DocManagementClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -71,6 +75,7 @@ public:
     {
         DocManagementClass->setWindowTitle(QApplication::translate("DocManagementClass", "DocManagement", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("DocManagementClass", "Tab 1", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("DocManagementClass", "Tab 2", Q_NULLPTR));
     } // retranslateUi
 
 };

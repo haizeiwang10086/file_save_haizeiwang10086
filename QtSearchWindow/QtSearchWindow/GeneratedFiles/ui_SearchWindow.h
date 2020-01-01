@@ -45,6 +45,9 @@ public:
         EditButton = new QPushButton(SearchWindow);
         EditButton->setObjectName(QStringLiteral("EditButton"));
         EditButton->setGeometry(QRect(180, 300, 75, 23));
+        QIcon icon;
+        icon.addFile(QStringLiteral("images/sync.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        EditButton->setIcon(icon);
 
         retranslateUi(SearchWindow);
 
@@ -56,7 +59,7 @@ public:
         SearchWindow->setWindowTitle(QApplication::translate("SearchWindow", "Form", Q_NULLPTR));
         AddButton->setText(QApplication::translate("SearchWindow", "\346\226\260\345\273\272", Q_NULLPTR));
         RecoverButton->setText(QApplication::translate("SearchWindow", "\346\222\244\345\233\236", Q_NULLPTR));
-        EditButton->setText(QApplication::translate("SearchWindow", "\347\274\226\350\276\221", Q_NULLPTR));
+        EditButton->setText(QString());
     } // retranslateUi
 
 };

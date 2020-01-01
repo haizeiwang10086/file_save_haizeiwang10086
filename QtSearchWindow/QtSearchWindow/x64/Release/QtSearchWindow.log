@@ -1,9 +1,2 @@
-﻿生成启动时间为 2019/10/31 13:46:52。
-     1>项目“E:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow\QtSearchWindow.vcxproj”在节点 2 上(ResourceCompile 个目标)。
-     1>ResourceCompile:
-         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"x64\Release\QtSearchWindow.res" QtSearchWindow.rc 
-     1>已完成生成项目“E:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow\QtSearchWindow.vcxproj”(ResourceCompile 个目标)的操作。
-
-已成功生成。
-
-已用时间 00:00:00.22
+﻿    正在创建库 F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\QtSearchWindow.lib 和对象 F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\QtSearchWindow.exp
+  QtSearchWindow.vcxproj -> F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\QtSearchWindow.dll
