@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50560
 File Encoding         : 65001
 
-Date: 2019-12-27 17:12:29
+Date: 2020-01-02 17:35:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,7 +25,7 @@ CREATE TABLE `question` (
   `content` longtext CHARACTER SET utf8,
   `label` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of question
@@ -105,7 +105,7 @@ INSERT INTO `question` VALUES ('81', 'dpkg 安装查看deb文件', '安装：sud
 INSERT INTO `question` VALUES ('82', '查看软件版本', 'pkg-config --modversion opencv', 'Ubuntu');
 INSERT INTO `question` VALUES ('83', '搜狗输入法安装', '先安装搜狗输入法软件sudo dpkg -i install sogou*.deb\n打开终端运行命令：im-config后，点击OK，看到fcitx的窗口选择fcitx其余全部yes或者ok. 然后重启ubuntu。\nim-config找不到fcitx；\nsudo apt-get --fix-broken install 运行这条命令需要联网，可以考虑先更新阿里源\n在fcitxconfigure点击加号添加搜狗输入法。', 'Ubuntu');
 INSERT INTO `question` VALUES ('84', '文件解压', 'Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。\n压缩 ： # tar -cvf archive_name.tar directory_to_compress\n解压缩：\ntar.bz2文件 tar jxvf boost_1_56_0.tar.bz2\ntar -jxvf xx.tar.bz2 -C /xx/xxx/xxx   -C大写，后面接要解压的路径\n\nunzip *.zip', 'Ubuntu');
-INSERT INTO `question` VALUES ('85', 'nvidia 驱动、cuda和cudnn的安装', '运行nvidia_driver.sh cuda.sh 两个脚本\n先解压cudnn-9.0-linux-x64-v7.1.tgz\n再运行cudnn.sh，此处只是文件的复制。\nnvidia-smi   \nnvidia-settings \nubuntu-drivers devices 检查硬件信息\nubuntu-drivers autoinstall 自动安装驱动\n\nwindows驱动下载地址\nhttps://www.nvidia.cn/Download/index.aspx?lang=cn', 'Ubuntu');
+INSERT INTO `question` VALUES ('85', 'nvidia 驱动、cuda和cudnn的安装', '运行nvidia_driver.sh cuda.sh 两个脚本\n先解压cudnn-9.0-linux-x64-v7.1.tgz\n再运行cudnn.sh，此处只是文件的复制。\nnvidia-smi   \nnvidia-settings \nubuntu-drivers devices 检查硬件信息\nubuntu-drivers autoinstall 自动安装驱动\n\nwindows驱动下载地址\nhttps://www.nvidia.cn/Download/index.aspx?lang=cn\n\ncuda toolkit历史版本\nhttps://developer.nvidia.com/cuda-toolkit-archive\n\ncudnn 历史版本\nhttps://developer.nvidia.com/cudnn', 'Ubuntu');
 INSERT INTO `question` VALUES ('86', '查看cpu进程数量', 'top命令', 'Ubuntu');
 INSERT INTO `question` VALUES ('87', 'Anaconda 安装', 'Ubuntu:\n到国内清华镜像https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/ \n所有安装包地址：https://repo.continuum.io/archive/\nbash Anaconda3-5.0.0-Linux-x86_64.sh\n如果后面你发现输出conda提示没有该命令，那么你需要source ~/.bashrc 这样就是更新环境变量，就可以正常使用了。\n如果发现这样还是没用，那么需要手动添加环境变量 \nexport PATH=/home/dl/anaconda3/bin:$PATH\nanaconda -v查看版本信息\n\n或者官网 https://repo.continuum.io/archive/', 'Python');
 INSERT INTO `question` VALUES ('88', 'python版本', '# 第2种方法\nimport sys \nprint(sys.version)\nprint(sys.version_info)', 'Python');
@@ -143,3 +143,14 @@ INSERT INTO `question` VALUES ('120', '打不开windows磁盘', 'Error mounting 
 INSERT INTO `question` VALUES ('121', 'python2和python3切换', '1.首先在ubuntu的终端ternimal输入命令：（查看系统里有没有python3）\nsudo apt-get install python3.5\n删除原来默认指向python2.7版本的链接。\nsudo rm /usr/bin/python\n重新指定新的链接给python3.5版本。\nsudo ln -s /usr/bin/python3.5 /usr/bin/python \n\n另：python2.7和3.5版本之间随意切换（这里3.5切换回2.7版本）：\nsudo rm /usr/bin/python\nsudo ln -s /usr/bin/python2.7 /usr/bin/python', 'Ubuntu');
 INSERT INTO `question` VALUES ('122', '输入pip命令报错', 'from pip import main ImportError: cannot import name main\n//修改前 from pip import main if __name__ == __main__: sys.exit(main()) 修改后 from pip import __main__ //这行也要修改 if __name__ == __main__: sys.exit(__main__._main())//增加__main__._', 'Ubuntu');
 INSERT INTO `question` VALUES ('123', 'git log', '(HEAD是一个指针，移动版本的时候就是在移动指针) ', 'Git');
+INSERT INTO `question` VALUES ('124', '常用函数', '增加工作路径\nimport sys\nsys.path.append(\'./samples/\')\n\n查看类或变量的所有属性和方法：dir(keras.layers)', 'Python');
+INSERT INTO `question` VALUES ('125', '说明', '不支持单引号直接输入，需要用“ \\\' ”替换“ \' ”', 'AboutMe');
+INSERT INTO `question` VALUES ('126', 'pip用法', 'pip安装git地址\npip install git+http网址(clone地址)#subdirectory=子文件夹名\n例：pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonAPI', 'Python');
+INSERT INTO `question` VALUES ('127', 'setup.py编译生成文件格式', '_包名\nwindows 生成.pyd文件\nubuntu生成.so文件', 'Python');
+INSERT INTO `question` VALUES ('128', 'Mask rcnn笔记', 'windows安装pycocotools包\npip install git+http网址#subdirectory=子目录名\n例：pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonAPI', 'Python');
+INSERT INTO `question` VALUES ('129', '类', 'class 类名(父类名):\n  def __init__(self,name):\n     self.name=name\n  def detect(self,image):\n     cv2.imshow(\'image\',image)\n\n__init__方法用于初始化类，每个方法需要传入self参数，创建属性直接在方法里self.name= 即可，无需声明。', 'Python');
+INSERT INTO `question` VALUES ('130', '分类问题和回归问题', '分类问题：模型的输出是概率分布 [0.2,0.7,0.1] \n回归问题：模型的输出是一个预测值，模型的输出是一个实数 \n回归问题： \n1.       参数是逐步调整的。 \nOne-hot编码，把正整数表达为向量 ，生成一个长度不小于正整数的向量，只有正整数的位置处为1。 \n2.       分类问题的损失函数： \n平方差损失，交叉熵损失。 \n分类问题： \n预测值与真实值的差距。 \n损失函数：平方差损失，绝对值损失。 \n', 'DeepLearning');
+INSERT INTO `question` VALUES ('131', '激励函数', 'relu: y=max(0,x) \nsoftmax:将向量变成概率分布。x=[x1,x2,x3], y=[e^x1/sum,e^x2/sum,e^x3/sum],sum=e^x1+e^x2+e^x3 ', 'DeepLearning');
+INSERT INTO `question` VALUES ('132', 'Tensorflow版本与cuda、cudnn版本对应', 'Tensorflow 1.5.0  cuda 9.0 cudnn 7.0.5 \nTensorflow 1.14.0  cuda 10.0 cudnn 7.6.5 ', 'Python');
+INSERT INTO `question` VALUES ('133', '读取文本文件', 'with open(\"test.txt\", \"r\") as f:\n    data = f.readlines()\n    print(data)', 'Python');
+INSERT INTO `question` VALUES ('134', 'keras创建模型和使用', 'model=keras.models.Sequential()//创建模型\nmodel.add(keras.layers.Flatten(input_shape=[28,28]))//开始添加层\nmodel.add(keras.layers.Dense(300,activation=\"relu\"))\nmodel.add(keras.layers.Dense(100,activation=\"relu\"))\nmodel.add(keras.layers.Dense(10,activation=\"softmax\"))\n#compile方法添加损失函数，优化方法，关心的值，sparse_categorical_crossentropy将y的索引转化为one-hot形式，如果已经是one-hot形式使用categorical_crossentropy就可以\nmodel.compile(loss=\"sparse_categorical_crossentropy\",optimizer=\"sgd\",metrics=[\"accuracy\"])', 'DeepLearning');

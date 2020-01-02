@@ -19,7 +19,7 @@ from tensorflow import keras
 print(tf.__version__)
 print(sys.version_info)
 
-for module in mpl,plt,np,sklearn,pd,tf,keras:
+for module in mpl,np,pd,tf,keras:
     print(module.__name__, module.__version__)
     
 
@@ -55,7 +55,7 @@ class_names=["T-shirt","Trouser","Pullover","Dress","Coat","sandal","shirt","Sne
 show_imgs(3,5,x_train,y_train,class_names)
 
 model=keras.models.Sequential()
-model.add(keras.layer.Flatten(input_shape=[28,28]))
+model.add(keras.layers.Flatten(input_shape=[28,28]))
 model.add(keras.layers.Dense(300,activation="relu"))
 model.add(keras.layers.Dense(100,activation="relu"))
 model.add(keras.layers.Dense(10,activation="softmax"))
