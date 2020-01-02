@@ -23,9 +23,17 @@ DocManagement::DocManagement(QWidget *parent)
     HINSTANCE hDllQuest = LoadLibrary(_T("QtQuestWindow.dll"));
     HINSTANCE hDllSech = LoadLibrary(_T("QtSearchWindow.dll"));
     HINSTANCE hDllImgWnd = LoadLibrary(_T("ImageToolWindow.dll"));
-    if (NULL == hDllQuest || NULL == hDllSech || NULL==hDllImgWnd)
+    if (NULL == hDllQuest)
     {
-        QMessageBox::warning(this, "æØ∏Ê", "∂ØÃ¨ø‚º”‘ÿ ß∞‹£°");
+        QMessageBox::warning(this, "æØ∏Ê", "QtQuestWindow.dllº”‘ÿ ß∞‹£°");
+    }
+    if (NULL == hDllSech)
+    {
+        QMessageBox::warning(this, "æØ∏Ê", "QtSearchWindow.dllº”‘ÿ ß∞‹£°");
+    }
+    if (NULL == hDllImgWnd)
+    {
+        QMessageBox::warning(this, "æØ∏Ê", "ImageToolWindow.dllº”‘ÿ ß∞‹£°");
     }
     pImgToolWnd = (ImageToolWindow)GetProcAddress(hDllImgWnd, "createImageToolWindow");
     pQuestWindow = (QuestionWindow)GetProcAddress(hDllQuest, "createQuestionWindow");

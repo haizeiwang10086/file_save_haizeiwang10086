@@ -1,30 +1,10 @@
-﻿生成启动时间为 2019/12/27 16:14:55。
+﻿生成启动时间为 2019/12/31 9:18:06。
      1>项目“E:\workspace\file_save_haizeiwang10086\QtQuestWindow\QtQuestWindow\QtQuestWindow.vcxproj”在节点 2 上(Build 个目标)。
      1>QtRccSetDependencies:
          "D:\QT\5.9.2\msvc2015_64\bin\rcc.exe" --list "Resource.qrc" > "x64\Release\rcc_list.txt" 2> nul
-       QtWork:
-         Uic'ing Browse.ui...
-         Uic'ing ExportDlg.ui...
-         Uic'ing New.ui...
-         Uic'ing QuestionWindow.ui...
-         Rcc'ing Resource.qrc...
-         Moc'ing BrowseDlg.h...
-         Moc'ing ExportDlg.h...
-         Moc'ing QtNewWindow.h...
        ClCompile:
-         D:\VisualStudio\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I.\GeneratedFiles\Release /I.\GeneratedFiles /I. /ID:\QT\5.9.2\msvc2015_64\include /I.\GeneratedFiles\Release /ID:\QT\5.9.2\msvc2015_64\include\QtCore /ID:\QT\5.9.2\msvc2015_64\include\QtGui /ID:\QT\5.9.2\msvc2015_64\include\QtANGLE /ID:\QT\5.9.2\msvc2015_64\include\QtSql /ID:\QT\5.9.2\msvc2015_64\include\QtWidgets /ID:\QT\5.9.2\msvc2015_64\include\QtXml /ID:\QT\5.9.2\msvc2015_64\include\QtXmlPatterns /Zi /nologo /W1 /WX- /MP /O2 /D UNICODE /D _UNICODE /D WIN32 /D WIN64 /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_WIDGETS_LIB /D QT_XML_LIB /D QT_XMLPATTERNS_LIB /D QTSEARCHWINDOW_LIB /D _WINDLL /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt BrowseDlg.cpp ExportDlg.cpp QQuestWindowControl.cpp QtNewWindow.cpp QtQuestWindow.cpp GeneratedFiles\qrc_Resource.cpp GeneratedFiles\Release\moc_BrowseDlg.cpp GeneratedFiles\Release\moc_ExportDlg.cpp GeneratedFiles\Release\moc_QtNewWindow.cpp
-         BrowseDlg.cpp
-         ExportDlg.cpp
-         QQuestWindowControl.cpp
-         QtNewWindow.cpp
+         D:\VisualStudio\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I.\GeneratedFiles\Release /I.\GeneratedFiles /I. /ID:\QT\5.9.2\msvc2015_64\include /I.\GeneratedFiles\Release /ID:\QT\5.9.2\msvc2015_64\include\QtCore /ID:\QT\5.9.2\msvc2015_64\include\QtGui /ID:\QT\5.9.2\msvc2015_64\include\QtANGLE /ID:\QT\5.9.2\msvc2015_64\include\QtSql /ID:\QT\5.9.2\msvc2015_64\include\QtWidgets /ID:\QT\5.9.2\msvc2015_64\include\QtXml /ID:\QT\5.9.2\msvc2015_64\include\QtXmlPatterns /Zi /nologo /W1 /WX- /MP /O2 /D UNICODE /D _UNICODE /D WIN32 /D WIN64 /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_WIDGETS_LIB /D QT_XML_LIB /D QT_XMLPATTERNS_LIB /D QTSEARCHWINDOW_LIB /D _WINDLL /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt QtQuestWindow.cpp
          QtQuestWindow.cpp
-         qrc_Resource.cpp
-         moc_BrowseDlg.cpp
-         moc_ExportDlg.cpp
-         moc_QtNewWindow.cpp
-       ResourceCompile:
-         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"x64\Release\app.res" app.rc 
-         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"x64\Release\QtQuestWindow.res" QtQuestWindow.rc 
        Link:
          D:\VisualStudio\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\\QtQuestWindow.dll" /NOLOGO /LIBPATH:D:\QT\5.9.2\msvc2015_64\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Sql.lib Qt5Widgets.lib Qt5Xml.lib Qt5XmlPatterns.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\QtQuestWindow.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\QtQuestWindow.lib" /MACHINE:X64 /DLL x64\Release\app.res
          x64\Release\QtQuestWindow.res
@@ -37,10 +17,9 @@
          x64\Release\moc_BrowseDlg.obj
          x64\Release\moc_ExportDlg.obj
          x64\Release\moc_QtNewWindow.obj
-           正在创建库 E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\QtQuestWindow.lib 和对象 E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\QtQuestWindow.exp
          QtQuestWindow.vcxproj -> E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\QtQuestWindow.dll
      1>已完成生成项目“E:\workspace\file_save_haizeiwang10086\QtQuestWindow\QtQuestWindow\QtQuestWindow.vcxproj”(Build 个目标)的操作。
 
 已成功生成。
 
-已用时间 00:00:12.05
+已用时间 00:00:04.56
