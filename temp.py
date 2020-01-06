@@ -94,10 +94,11 @@ if not os.path.exists(logdir):
     os.mkdir(logdir)
 callbacks=[
         keras.callbacks.TensorBoard(logdir),
-        keras.callbacks.ModelCheckpoint(output_model_file,save_best_only=True),
-        keras.callbacks.EarlyStopping(patience=5,min_delta=1e-3)]
+        keras.callbacks.ModelCheckpoint(output_model_file,save_best_only=True)
+        #keras.callbacks.EarlyStopping(patience=5,min_delta=1e-3)
+        ]
 
-history=model.fit(x_train,y_train,epochs=10,validation_data=(x_valid,y_valid),
+history=model.fit(x_train,y_train,epochs=200,validation_data=(x_valid,y_valid),
                   callbacks=callbacks)
 
 type(history)
