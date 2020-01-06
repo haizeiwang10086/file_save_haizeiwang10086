@@ -1,4 +1,4 @@
-﻿生成启动时间为 2019/12/31 9:18:06。
+﻿生成启动时间为 2020/1/6 17:03:30。
      1>项目“E:\workspace\file_save_haizeiwang10086\QtQuestWindow\QtQuestWindow\QtQuestWindow.vcxproj”在节点 2 上(Build 个目标)。
      1>QtRccSetDependencies:
          "D:\QT\5.9.2\msvc2015_64\bin\rcc.exe" --list "Resource.qrc" > "x64\Release\rcc_list.txt" 2> nul
@@ -22,4 +22,4 @@
 
 已成功生成。
 
-已用时间 00:00:04.56
+已用时间 00:00:04.58

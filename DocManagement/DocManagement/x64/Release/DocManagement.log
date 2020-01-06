@@ -1,37 +1,42 @@
-<<<<<<< HEAD
-﻿生成启动时间为 2019/12/31 9:17:56。
+﻿生成启动时间为 2020/1/6 17:03:26。
      1>项目“E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\DocManagement.vcxproj”在节点 2 上(Build 个目标)。
-     1>QtRccSetDependencies:
+     1>CustomBuild:
+         Moc'ing DocManagement.h...
+         Uic'ing DocManagement.ui...
+         Rcc'ing DocManagement.qrc...
+     1>RCC : warning : No resources in 'E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\DocManagement.qrc'.
+         
+       QtRccSetDependencies:
          "D:\QT\5.9.2\msvc2015_64\bin\rcc.exe" --list "resource.qrc" > "x64\Release\rcc_list.txt" 2> nul
+       QtWork:
+         Uic'ing BatchEditFileName.ui...
+         Uic'ing DataBaseLink.ui...
+         Uic'ing DocDisp.ui...
+         Moc'ing BatchEditName.h...
+         Moc'ing DataBaseLinkDialog.h...
        ClCompile:
-         D:\VisualStudio\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I.\GeneratedFiles\Release /I.\GeneratedFiles /I. /ID:\QT\5.9.2\msvc2015_64\include /I.\GeneratedFiles\Release /ID:\QT\5.9.2\msvc2015_64\include\QtCore /ID:\QT\5.9.2\msvc2015_64\include\QtGui /ID:\QT\5.9.2\msvc2015_64\include\QtANGLE /ID:\QT\5.9.2\msvc2015_64\include\QtSql /ID:\QT\5.9.2\msvc2015_64\include\QtWidgets /ID:\QT\5.9.2\msvc2015_64\include\QtXml /Zi /nologo /W1 /WX- /MP /O2 /D UNICODE /D _UNICODE /D WIN32 /D WIN64 /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_WIDGETS_LIB /D QT_XML_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt DocManagement.cpp
+         D:\VisualStudio\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I.\GeneratedFiles\Release /I.\GeneratedFiles /I. /ID:\ProgramFile\QT\5.9.2\msvc2015_64\include /I.\GeneratedFiles\Release /ID:\ProgramFile\QT\5.9.2\msvc2015_64\include\QtCore /ID:\ProgramFile\QT\5.9.2\msvc2015_64\include\QtGui /ID:\ProgramFile\QT\5.9.2\msvc2015_64\include\QtSql /ID:\ProgramFile\QT\5.9.2\msvc2015_64\include\QtWidgets /Zi /nologo /W1 /WX- /MP /O2 /D UNICODE /D _UNICODE /D WIN32 /D WIN64 /D QT_NO_DEBUG /D NDEBUG /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt BatchEditName.cpp CustomTabStyle.cpp DataBaseLinkDialog.cpp DocDisp.cpp DocManagement.cpp GeneratedFiles\Release\moc_DocManagement.cpp main.cpp GeneratedFiles\qrc_resource.cpp GeneratedFiles\Release\moc_BatchEditName.cpp GeneratedFiles\Release\moc_DataBaseLinkDialog.cpp
+         BatchEditName.cpp
+         CustomTabStyle.cpp
+         DataBaseLinkDialog.cpp
+         DocDisp.cpp
+     1>E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\GeneratedFiles\ui_DataBaseLink.h(12): fatal error C1083: 无法打开包括文件: “QtCore/QVariant”: No such file or directory (编译源文件 DataBaseLinkDialog.cpp)
+     1>E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\GeneratedFiles\ui_DocDisp.h(12): fatal error C1083: 无法打开包括文件: “QtCore/QVariant”: No such file or directory (编译源文件 DocDisp.cpp)
+     1>E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\GeneratedFiles\ui_BatchEditFileName.h(12): fatal error C1083: 无法打开包括文件: “QtCore/QVariant”: No such file or directory (编译源文件 BatchEditName.cpp)
+     1>e:\workspace\file_save_haizeiwang10086\docmanagement\docmanagement\CustomTabStyle.h(3): fatal error C1083: 无法打开包括文件: “QProxyStyle”: No such file or directory (编译源文件 CustomTabStyle.cpp)
          DocManagement.cpp
-       Link:
-         D:\VisualStudio\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\\DocManagement.exe" /NOLOGO /LIBPATH:D:\QT\5.9.2\msvc2015_64\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Sql.lib Qt5Widgets.lib Qt5Xml.lib Qt5AxContainer.lib Qt5AxBase.lib Qt5AxServer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\DocManagement.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\DocManagement.lib" /MACHINE:X64 x64\Release\Resource.res
-         x64\Release\BatchEditName.obj
-         x64\Release\CustomTabStyle.obj
-         x64\Release\DataBaseLinkDialog.obj
-         x64\Release\DocDisp.obj
-         x64\Release\DocManagement.obj
-         x64\Release\qrc_DocManagement.obj
-         x64\Release\moc_DocManagement.obj
-         x64\Release\main.obj
-         x64\Release\qrc_resource.obj
-         x64\Release\moc_BatchEditName.obj
-         x64\Release\moc_DataBaseLinkDialog.obj
-         DocManagement.vcxproj -> E:\workspace\file_save_haizeiwang10086\QtQuestWindow\x64\Release\DocManagement.exe
-     1>已完成生成项目“E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\DocManagement.vcxproj”(Build 个目标)的操作。
+         moc_DocManagement.cpp
+         main.cpp
+         qrc_resource.cpp
+     1>e:\workspace\file_save_haizeiwang10086\docmanagement\docmanagement\DocManagement.h(3): fatal error C1083: 无法打开包括文件: “QtWidgets/QMainWindow”: No such file or directory (编译源文件 main.cpp)
+     1>e:\workspace\file_save_haizeiwang10086\docmanagement\docmanagement\generatedfiles\release\../../DocManagement.h(3): fatal error C1083: 无法打开包括文件: “QtWidgets/QMainWindow”: No such file or directory (编译源文件 GeneratedFiles\Release\moc_DocManagement.cpp)
+         moc_BatchEditName.cpp
+         moc_DataBaseLinkDialog.cpp
+     1>e:\workspace\file_save_haizeiwang10086\docmanagement\docmanagement\DocManagement.h(3): fatal error C1083: 无法打开包括文件: “QtWidgets/QMainWindow”: No such file or directory (编译源文件 DocManagement.cpp)
+     1>E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\GeneratedFiles\ui_BatchEditFileName.h(12): fatal error C1083: 无法打开包括文件: “QtCore/QVariant”: No such file or directory (编译源文件 GeneratedFiles\Release\moc_BatchEditName.cpp)
+     1>E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\GeneratedFiles\ui_DataBaseLink.h(12): fatal error C1083: 无法打开包括文件: “QtCore/QVariant”: No such file or directory (编译源文件 GeneratedFiles\Release\moc_DataBaseLinkDialog.cpp)
+     1>已完成生成项目“E:\workspace\file_save_haizeiwang10086\DocManagement\DocManagement\DocManagement.vcxproj”(Build 个目标)的操作 - 失败。
 
-已成功生成。
+生成失败。
 
-已用时间 00:00:10.17
-=======
-﻿qtmain.lib(qtmain_win.obj) : warning LNK4099: 未找到 PDB“qtmain.pdb”(使用“qtmain.lib(qtmain_win.obj)”或在“F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\qtmain.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-Qt5AxContainer.lib(qaxbase.obj) : warning LNK4099: 未找到 PDB“Qt5AxContainer.pdb”(使用“Qt5AxContainer.lib(qaxbase.obj)”或在“F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\Qt5AxContainer.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-Qt5AxContainer.lib(qaxwidget.obj) : warning LNK4099: 未找到 PDB“Qt5AxContainer.pdb”(使用“Qt5AxContainer.lib(qaxwidget.obj)”或在“F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\Qt5AxContainer.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-Qt5AxContainer.lib(qaxobject.obj) : warning LNK4099: 未找到 PDB“Qt5AxContainer.pdb”(使用“Qt5AxContainer.lib(qaxobject.obj)”或在“F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\Qt5AxContainer.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-Qt5AxContainer.lib(qaxtypes.obj) : warning LNK4099: 未找到 PDB“Qt5AxContainer.pdb”(使用“Qt5AxContainer.lib(qaxtypes.obj)”或在“F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\Qt5AxContainer.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-Qt5AxContainer.lib(qaxutils.obj) : warning LNK4099: 未找到 PDB“Qt5AxContainer.pdb”(使用“Qt5AxContainer.lib(qaxutils.obj)”或在“F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\Qt5AxContainer.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-Qt5AxBase.lib(qaxtypefunctions.obj) : warning LNK4099: 未找到 PDB“Qt5AxBase.pdb”(使用“Qt5AxBase.lib(qaxtypefunctions.obj)”或在“F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\Qt5AxBase.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-  DocManagement.vcxproj -> F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\DocManagement.exe
->>>>>>> ecaa30122e44906683a5bb6ba23ce87a5bfac6d9
+已用时间 00:00:03.78
