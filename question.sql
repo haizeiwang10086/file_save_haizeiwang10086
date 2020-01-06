@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50560
 File Encoding         : 65001
 
-Date: 2020-01-02 17:35:28
+Date: 2020-01-06 17:18:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,7 +25,7 @@ CREATE TABLE `question` (
   `content` longtext CHARACTER SET utf8,
   `label` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=141 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of question
@@ -81,7 +81,6 @@ INSERT INTO `question` VALUES ('55', 'Qt事件', 'globalPos()屏幕坐标\npos()
 INSERT INTO `question` VALUES ('56', 'QString 格式化', '字符串格式化：\nQString str=QString(\"<center><h1>Mouse Press: (%1, %2)</h1></center>\").arg(100).arg(\"Tom\");\n<center><h1>Mouse Press: (%1, %2)</h1></center>为设置字符串显示样式（html语句），第一个参数%1，第二个参数%2\n\nQString转char *:\nQString  str;\nchar*  ch;\nQByteArray ba = str.toLatin1(); // must\nch=ba.data();\n\nQString转int\nQString str(\"100\");\nint tmp = str.toInt();\n\nint转QString\nQString::number();', 'qt');
 INSERT INTO `question` VALUES ('59', 'Qt event函数', '如果传入事件已被识别并且处理，则需要返回true,否则返回false,如果返回值是true,那么Qt会认为这个事件已经处理完毕，不会再将这个事件发送给其它对象，而是会继续处理事件队列中的下一个事件。\n在event()函数中调用accepe()或者ignore(）函数没有作用，不会影响事件的传播。\nQEvent转换为所需要的类型，例如: QTimerEvent *evn=static_cast<QTimerEvent *>(e);\nbool event(QEvent *e)\n{\n   //事件分发e->type();\n  switch(e->type())\n  {\n    case QEvent::Close:\n     closeEvent();\n    case QEvent::MouseMove:\n     mouseMoveEvent(e); \n  }\n   \n\n}', 'qt');
 INSERT INTO `question` VALUES ('60', 'eventFilter 事件过滤器', '构造函数中添加 ui->label_2->installEvent(this);//this父对象，指定有那个父对象处理,给label_2控件添加了事件过滤。\n事件过滤器和被安装的组件必须在同一个线程内，否则事件过滤器无效，Qt事件的调用最终都会追溯到virtual bool QCoreApplication::notify(QObject *receiver,QEvent *event);，该函数会将event发送给receiver,也就是调用receiver->event(event),其返回值就是来自receiver的事件处理器。\nbool eventFilter(QObject *watched, QEvent *env)\n{\n  if(watched==ui->label_2)\n  {\n    QMouseEvent *e=static_cast<QMouseEvent *>(env);\n    if(e->type()==QEvent::MouseMove)\n    {\n      \n      ui->label_2->setText(QString(\"Mouse move:(%1,%2)\")).arg(1).arg(2);\n    }\n  }\n  else\n  {\n    return QWidget::eventFilter(watched,e);\n  }\n}', 'qt');
-INSERT INTO `question` VALUES ('61', '快递单', '75310856386829  内存卡 已联系  18911891016  中通快递\n13653363678  手撕素肉  \n\n  ', 'qt');
 INSERT INTO `question` VALUES ('62', 'QBitMap', 'QBitMap继承于QPixMap,区别在于QPixMap主要画彩色图像，QBitMap只有黑白两种颜色。\nQPainter p(this);\np.drawPixmap(200,0,QBitmap(\"./Image/1.tif\"));\n', 'qt');
 INSERT INTO `question` VALUES ('63', 'qt根目录', 'build-Image-Desktop_Qt_5_9_2_MinGW_32bit-Debug这个编译生成的程序根目录是qt程序的根目录./', 'qt');
 INSERT INTO `question` VALUES ('64', 'QPixmap', '可以直接读取图片绘图\nQPainter p(this);\np.drawPixmap(0,0,QPixmap(\"./Image/1.tif\"));\n\n\nQPixmap pixmap;\npixmap.load(\"./Image/1.tif\");\npixmap.save(\"./Image/2.tif\");', 'qt');
@@ -143,7 +142,7 @@ INSERT INTO `question` VALUES ('120', '打不开windows磁盘', 'Error mounting 
 INSERT INTO `question` VALUES ('121', 'python2和python3切换', '1.首先在ubuntu的终端ternimal输入命令：（查看系统里有没有python3）\nsudo apt-get install python3.5\n删除原来默认指向python2.7版本的链接。\nsudo rm /usr/bin/python\n重新指定新的链接给python3.5版本。\nsudo ln -s /usr/bin/python3.5 /usr/bin/python \n\n另：python2.7和3.5版本之间随意切换（这里3.5切换回2.7版本）：\nsudo rm /usr/bin/python\nsudo ln -s /usr/bin/python2.7 /usr/bin/python', 'Ubuntu');
 INSERT INTO `question` VALUES ('122', '输入pip命令报错', 'from pip import main ImportError: cannot import name main\n//修改前 from pip import main if __name__ == __main__: sys.exit(main()) 修改后 from pip import __main__ //这行也要修改 if __name__ == __main__: sys.exit(__main__._main())//增加__main__._', 'Ubuntu');
 INSERT INTO `question` VALUES ('123', 'git log', '(HEAD是一个指针，移动版本的时候就是在移动指针) ', 'Git');
-INSERT INTO `question` VALUES ('124', '常用函数', '增加工作路径\nimport sys\nsys.path.append(\'./samples/\')\n\n查看类或变量的所有属性和方法：dir(keras.layers)', 'Python');
+INSERT INTO `question` VALUES ('124', '常用函数', '增加工作路径\nimport sys\nsys.path.append(\'./samples/\')\n\n查看类或变量的所有属性和方法：dir(keras.layers)\n\nlist(range(20))生成1-20的数组（list）元组转数组\n\nzip() 函数用于将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表。\n如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 * 号操作符，可以将元组解压为列表。\nzip 方法在 Python 2 和 Python 3 中的不同：在 Python 3.x 中为了减少内存，zip() 返回的是一个对象。如需展示列表，需手动 list() 转换。\na = [1,2,3]\nb = [4,5,6]\nc = [4,5,6,7,8]\nzipped = zip(a,b)     # 打包为元组的列表\n[(1, 4), (2, 5), (3, 6)]\nzip(a,c)              # 元素个数与最短的列表一致\n[(1, 4), (2, 5), (3, 6)]\n\ndict数组二元组转字典', 'Python');
 INSERT INTO `question` VALUES ('125', '说明', '不支持单引号直接输入，需要用“ \\\' ”替换“ \' ”', 'AboutMe');
 INSERT INTO `question` VALUES ('126', 'pip用法', 'pip安装git地址\npip install git+http网址(clone地址)#subdirectory=子文件夹名\n例：pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonAPI', 'Python');
 INSERT INTO `question` VALUES ('127', 'setup.py编译生成文件格式', '_包名\nwindows 生成.pyd文件\nubuntu生成.so文件', 'Python');
@@ -154,3 +153,9 @@ INSERT INTO `question` VALUES ('131', '激励函数', 'relu: y=max(0,x) \nsoftma
 INSERT INTO `question` VALUES ('132', 'Tensorflow版本与cuda、cudnn版本对应', 'Tensorflow 1.5.0  cuda 9.0 cudnn 7.0.5 \nTensorflow 1.14.0  cuda 10.0 cudnn 7.6.5 ', 'Python');
 INSERT INTO `question` VALUES ('133', '读取文本文件', 'with open(\"test.txt\", \"r\") as f:\n    data = f.readlines()\n    print(data)', 'Python');
 INSERT INTO `question` VALUES ('134', 'keras创建模型和使用', 'model=keras.models.Sequential()//创建模型\nmodel.add(keras.layers.Flatten(input_shape=[28,28]))//开始添加层\nmodel.add(keras.layers.Dense(300,activation=\"relu\"))\nmodel.add(keras.layers.Dense(100,activation=\"relu\"))\nmodel.add(keras.layers.Dense(10,activation=\"softmax\"))\n#compile方法添加损失函数，优化方法，关心的值，sparse_categorical_crossentropy将y的索引转化为one-hot形式，如果已经是one-hot形式使用categorical_crossentropy就可以\nmodel.compile(loss=\"sparse_categorical_crossentropy\",optimizer=\"sgd\",metrics=[\"accuracy\"])', 'DeepLearning');
+INSERT INTO `question` VALUES ('135', 'python lambda表达式', 'lambda argument_list: expression\nargument_list是参数列表，它的结构与Python中函数(function)的参数列表是一样的（输入）\nexpression是一个关于参数的表达式。表达式中出现的参数需要在argument_list中有定义，并且表达式只能是单行的（输出）\nlambda函数：又称“匿名函数”\nlambda函数有输入和输出：输入是传入到参数列表argument_list的值，输出是根据表达式expression计算得到的值。\nlambda函数功能简单：单行expression决定了lambda函数不可能完成复杂的逻辑\n二、示例\nlambda x, y: x*y；函数输入是x和y，输出是它们的积x*y\nlambda:None；函数没有输入参数，输出是None\nlambda *args: sum(args); 输入是任意个数的参数，输出是它们的和(隐性要求是输入参数必须能够进行加法运算)\nlambda **kwargs: 1；输入是任意键值对参数，输出是1', 'Python');
+INSERT INTO `question` VALUES ('136', 'vs qt版本错误', '解决方案（非项目），右键-》Change Solution Versions修改解决方案的qt版本', 'qt');
+INSERT INTO `question` VALUES ('137', '本地恢复远程库版本，放弃所有修改', 'git checkout .（貌似有效，待测试）\ngit log  git reset commit后面的长串（貌似没有效果）\n', 'Git');
+INSERT INTO `question` VALUES ('138', '回调函数callbacks', 'EarlyStopping 需要的时候(loss不再下降)提前终止 \nModelCheckpoint（每隔一段时间保存） \nTensorBoard 可视化工具，模型训练中查看 ', 'DeepLearning');
+INSERT INTO `question` VALUES ('139', '提升分类准确率的方法', '1.  对数据归一化 \n2.   批量归一化。 \n对数据归一化： \nX=(x-u)/std \n数据归一化代码（图像分类问题）：\n#对数据归一化\nfrom sklearn.preprocessing import StandardScaler\nscaler=StandardScaler()\n#用这个函数进行归一化需要将数据格式转换为二维x_train:[None,28,28]->[None,784]\n#fit_transform记录训练集的均值和方差用于验证集和测试集\nx_train_scaled=scaler.fit_transform(x_train.astype(np.float32).reshape(-1,1)).reshape(-1,28,28)\nx_valid_scaled=scaler.transform(x_valid.astype(np.float32).reshape(-1,1)).reshape(-1,28,28)\nx_test_scaled=scaler.transform(x_test.astype(np.float32).reshape(-1,1)).reshape(-1,28,28)\n\n', 'DeepLearning');
+INSERT INTO `question` VALUES ('140', ' tree命令', '打印目录结构', 'Ubuntu');
