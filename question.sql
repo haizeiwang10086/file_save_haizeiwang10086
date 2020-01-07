@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50560
 File Encoding         : 65001
 
-Date: 2020-01-06 17:18:21
+Date: 2020-01-07 09:47:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,7 +25,7 @@ CREATE TABLE `question` (
   `content` longtext CHARACTER SET utf8,
   `label` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=141 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=142 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of question
@@ -159,3 +159,4 @@ INSERT INTO `question` VALUES ('137', '本地恢复远程库版本，放弃所�
 INSERT INTO `question` VALUES ('138', '回调函数callbacks', 'EarlyStopping 需要的时候(loss不再下降)提前终止 \nModelCheckpoint（每隔一段时间保存） \nTensorBoard 可视化工具，模型训练中查看 ', 'DeepLearning');
 INSERT INTO `question` VALUES ('139', '提升分类准确率的方法', '1.  对数据归一化 \n2.   批量归一化。 \n对数据归一化： \nX=(x-u)/std \n数据归一化代码（图像分类问题）：\n#对数据归一化\nfrom sklearn.preprocessing import StandardScaler\nscaler=StandardScaler()\n#用这个函数进行归一化需要将数据格式转换为二维x_train:[None,28,28]->[None,784]\n#fit_transform记录训练集的均值和方差用于验证集和测试集\nx_train_scaled=scaler.fit_transform(x_train.astype(np.float32).reshape(-1,1)).reshape(-1,28,28)\nx_valid_scaled=scaler.transform(x_valid.astype(np.float32).reshape(-1,1)).reshape(-1,28,28)\nx_test_scaled=scaler.transform(x_test.astype(np.float32).reshape(-1,1)).reshape(-1,28,28)\n\n', 'DeepLearning');
 INSERT INTO `question` VALUES ('140', ' tree命令', '打印目录结构', 'Ubuntu');
+INSERT INTO `question` VALUES ('141', 'cmake编译opencv opencv-contrib', '需要勾选 BUILD_opencv_world：主要是把所有的lib文件都弄到一个opencv_world340d.lib中方便配置，若不勾选在最后会产生大概38个.lib文件。\nWITH_CUDDA  , WITH CUFFT看情况添加\n\nConfigure过程中会出现ippicv文件下载失败问题，手动下载，CMakeDownloadLog.txt中有链接（下载失败会有记录），并放到D:/OpenCV/opencvsources/.cache/ippicv文件夹下重命名为CMakeDownloadLog.txt文件提示的名字\nffmpeg中的文件：\nopencv_ffmpeg.dll，opencv_ffmpeg_64.dll 使用CMakeDownloadLog.txt中的链接，用迅雷下载，下载好后复制到D:/Program Files/Opencvopencv/sources/3rdparty/ffmpeg文件夹下\nffmpeg_version.cmake使用迅雷下载好后，重命名添加hash值，CMakeDownloadLog.txt中有文件的全名。\n\n没有红色感叹号后点击Generate生成Opencv.sln文件\n\nopencv-contrib\nOPENCV_EXTRA_MODULES_PATH : D:/Program Files/Opencv/opencv_contrib-3.4.4/opencv_contrib-3.4.4/modules', 'opencv');
