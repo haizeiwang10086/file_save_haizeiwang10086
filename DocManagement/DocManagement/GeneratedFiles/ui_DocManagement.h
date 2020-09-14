@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -27,9 +28,8 @@ class Ui_DocManagementClass
 {
 public:
     QWidget *centralWidget;
+    QGridLayout *gridLayout;
     QTabWidget *tabWidget;
-    QWidget *tab;
-    QWidget *tab_2;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -38,23 +38,25 @@ public:
     {
         if (DocManagementClass->objectName().isEmpty())
             DocManagementClass->setObjectName(QStringLiteral("DocManagementClass"));
-        DocManagementClass->resize(600, 400);
+        DocManagementClass->resize(1000, 600);
+        DocManagementClass->setMinimumSize(QSize(1000, 600));
         centralWidget = new QWidget(DocManagementClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        gridLayout = new QGridLayout(centralWidget);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(30, 30, 541, 311));
+        tabWidget->setStyleSheet(QStringLiteral(""));
         tabWidget->setTabPosition(QTabWidget::West);
-        tab = new QWidget();
-        tab->setObjectName(QStringLiteral("tab"));
-        tabWidget->addTab(tab, QString());
-        tab_2 = new QWidget();
-        tab_2->setObjectName(QStringLiteral("tab_2"));
-        tabWidget->addTab(tab_2, QString());
+
+        gridLayout->addWidget(tabWidget, 0, 0, 1, 1);
+
         DocManagementClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(DocManagementClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 600, 23));
+        menuBar->setGeometry(QRect(0, 0, 1000, 30));
         DocManagementClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(DocManagementClass);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -65,7 +67,7 @@ public:
 
         retranslateUi(DocManagementClass);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(-1);
 
 
         QMetaObject::connectSlotsByName(DocManagementClass);
@@ -74,8 +76,6 @@ public:
     void retranslateUi(QMainWindow *DocManagementClass)
     {
         DocManagementClass->setWindowTitle(QApplication::translate("DocManagementClass", "DocManagement", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("DocManagementClass", "Tab 1", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("DocManagementClass", "Tab 2", Q_NULLPTR));
     } // retranslateUi
 
 };

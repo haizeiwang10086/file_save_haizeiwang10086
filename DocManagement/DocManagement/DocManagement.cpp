@@ -6,6 +6,8 @@
 #include <QMessageBox>
 #include <qdebug.h>
 #include "CustomTabStyle.h"
+#include "QQuestWindowControl.h"
+#include "ImageToolDlgControl.h"
 
 DocManagement::DocManagement(QWidget *parent)
     : QMainWindow(parent)
@@ -14,33 +16,20 @@ DocManagement::DocManagement(QWidget *parent)
     ui.setupUi(this);
     setWindowTitle(QString::fromUtf16(u"管理工具"));
     QIcon icon;
-    icon.addFile(":/image/myapp.ico");
+    icon.addFile(":/images/myapp.ico");
     setWindowIcon(icon);
     /*MTabWidget * tabWidget = new MTabWidget(this);
     tabWidget->show();*/
     ui.tabWidget->tabBar()->setStyle(new CustomTabStyle);
 
-    HINSTANCE hDllQuest = LoadLibrary(_T("QtQuestWindow.dll"));
     HINSTANCE hDllSech = LoadLibrary(_T("QtSearchWindow.dll"));
-    HINSTANCE hDllImgWnd = LoadLibrary(_T("ImageToolWindow.dll"));
-    if (NULL == hDllQuest)
-    {
-        QMessageBox::warning(this, "警告", "QtQuestWindow.dll加载失败！");
-    }
     if (NULL == hDllSech)
     {
         QMessageBox::warning(this, "警告", "QtSearchWindow.dll加载失败！");
     }
-    if (NULL == hDllImgWnd)
-    {
-        QMessageBox::warning(this, "警告", "ImageToolWindow.dll加载失败！");
-    }
-    pImgToolWnd = (ImageToolWindow)GetProcAddress(hDllImgWnd, "createImageToolWindow");
-    pQuestWindow = (QuestionWindow)GetProcAddress(hDllQuest, "createQuestionWindow");
     pSechWindow = (SechWindow)GetProcAddress(hDllSech, "createSearchWindow");
     pFreeSechWND = (FreeSechWindow)GetProcAddress(hDllSech, "freeSearchWindow");
-    pFreeImgWnd = (freeImageToolWindow)GetProcAddress(hDllImgWnd, "freeImageToolWindow");
-    if(NULL== pQuestWindow || NULL == pSechWindow || NULL == pImgToolWnd)
+    if(NULL == pSechWindow)
     {
         QMessageBox::warning(this, "警告", "动态库内部函数调用失败！");
     }
@@ -80,18 +69,19 @@ DocManagement::DocManagement(QWidget *parent)
 		});
 	void (DataBaseLinkDialog::*linkSignal)(QString dbName, QString userName, QString password) = &DataBaseLinkDialog::dataBaseLinkSignal;
 	connect(&dbDlg, linkSignal, this, &DocManagement::linkDb);
-    ui.tabWidget->addTab(&docDisp, QString::fromUtf16(u"主窗口"));
-    ui.tabWidget->removeTab(0);
-    ui.tabWidget->addTab(&batEditWnd, QString::fromUtf16(u"批量改名"));
-    questWnd = pQuestWindow(this);
+    fileManager = new FileManager(this);
+    ui.tabWidget->addTab(&batEditWnd, QString::fromUtf16(u"主窗口"));
+	ui.tabWidget->addTab(fileManager, QString::fromUtf16(u"文件管理"));
+    questWnd = new QQuestWindowControl(this);
     ui.tabWidget->addTab(questWnd, QString::fromUtf16(u"问题查询"));
     sechWnd = pSechWindow(this);
     ui.tabWidget->addTab(sechWnd, QString::fromUtf16(u"信息查询"));
-    imgToolWnd = pImgToolWnd(this);
+    imgToolWnd = new ImageToolDlgControl(this);
     ui.tabWidget->addTab(imgToolWnd, QString::fromUtf16(u"图像工具"));
     connect(ui.tabWidget, &QTabWidget::currentChanged, this, &DocManagement::dealTabClick);
-
     resize(1000, 600);
+
+	
     setAcceptDrops(true);
 }
 
@@ -110,29 +100,25 @@ void DocManagement::linkDb(QString dbName, QString userName, QString password)
 	}
 }
 
-void DocManagement::resizeEvent(QResizeEvent * event)
-{
-    QSize size = this->size();
-    ui.tabWidget->resize(size.width() - 20, size.height() - 20);
-    ui.tabWidget->move(10, 10);
-    QSize twSize = ui.tabWidget->size();
-    sechWnd->resize(twSize.width()-40, twSize.height()-20);
-    questWnd->resize(twSize.width() - 40, twSize.height()-20);
-    docDisp.resize(twSize.width() - 40, twSize.height()-20);
-    batEditWnd.resize(twSize.width() - 40, twSize.height() - 20);
-    imgToolWnd->resize(twSize.width()-80, twSize.height() - 20);
-}
-
 void DocManagement::dealTabClick(int idex)
 {
+    if (idex == 1)
+    {
+        sechWnd->closeDb();
+        questWnd->closeDb();
+        fileManager->openDb();
+    }
     if (idex == 2)
     {
+        fileManager->closeDb();
         sechWnd->closeDb();
         questWnd->openDb();
     }
     if (idex == 3)
     {
+        fileManager->closeDb();
         questWnd->closeDb();
         sechWnd->openDb();
     }
 }
+

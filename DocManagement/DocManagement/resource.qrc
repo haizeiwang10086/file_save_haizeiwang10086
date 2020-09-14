@@ -1,5 +1,9 @@
 <RCC>
     <qresource>
-      <file>image/myapp.ico</file>
+      <file>images/myapp.ico</file>
+	  <file>images/desert.jpg</file>
+	  <file>images/new.ico</file>
+	  <file>images/search.ico</file>
+	  <file>images/sync.ico</file>
     </qresource>
 </RCC>

@@ -10,6 +10,9 @@ public:
 
     void searchDirectoryDlg();
     void modifyFilesName();
+    void selectImagePath();
+    QString selectPath();
+    void cvtImageFormat();
 
 private:
     Ui::BatchEditFileName editWidget;

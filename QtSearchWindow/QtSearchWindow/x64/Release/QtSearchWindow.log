@@ -1,2 +1,41 @@
-﻿    正在创建库 F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\QtSearchWindow.lib 和对象 F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\QtSearchWindow.exp
-  QtSearchWindow.vcxproj -> F:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\QtSearchWindow.dll
+﻿生成启动时间为 2020/1/9 15:17:32。
+     1>项目“E:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow\QtSearchWindow.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>项目“E:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow\QtSearchWindow.vcxproj”(1)正在节点 2 上生成“E:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow\QtSearchWindow.vcxproj”(1:2) (Build 个目标)。
+     1>QtWork:
+         Uic'ing Browse.ui...
+         Uic'ing New.ui...
+         Uic'ing SearchWindow.ui...
+         Moc'ing BrowseDlg.h...
+         Moc'ing QtNewWindow.h...
+         Moc'ing QtSearchWindow.h...
+       ClCompile:
+         D:\ProgramFiles\VisualStudio\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I.\GeneratedFiles\Release /I.\GeneratedFiles /I. /ID:\ProgramFiles\Qt\Qt5.9.2\5.9.2\msvc2015_64\include /I.\GeneratedFiles\Release /ID:\ProgramFiles\Qt\Qt5.9.2\5.9.2\msvc2015_64\include\QtCore /ID:\ProgramFiles\Qt\Qt5.9.2\5.9.2\msvc2015_64\include\QtGui /ID:\ProgramFiles\Qt\Qt5.9.2\5.9.2\msvc2015_64\include\QtSql /ID:\ProgramFiles\Qt\Qt5.9.2\5.9.2\msvc2015_64\include\QtWidgets /Zi /nologo /W1 /WX- /MP /O2 /D UNICODE /D _UNICODE /D WIN32 /D WIN64 /D QT_NO_DEBUG /D NDEBUG /D QTSEARCHWINDOW_LIB /D _WINDLL /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt BrowseDlg.cpp QSearchWindowControl.cpp QtNewWindow.cpp QtSearchWindow.cpp
+         BrowseDlg.cpp
+         QSearchWindowControl.cpp
+         QtNewWindow.cpp
+         QtSearchWindow.cpp
+         D:\ProgramFiles\VisualStudio\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I.\GeneratedFiles\Release /IE:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow\ /I.\GeneratedFiles /I. /ID:\ProgramFiles\Qt\Qt5.9.2\5.9.2\msvc2015_64\include /I.\GeneratedFiles\Release /ID:\ProgramFiles\Qt\Qt5.9.2\5.9.2\msvc2015_64\include\QtCore /ID:\ProgramFiles\Qt\Qt5.9.2\5.9.2\msvc2015_64\include\QtGui /ID:\ProgramFiles\Qt\Qt5.9.2\5.9.2\msvc2015_64\include\QtSql /ID:\ProgramFiles\Qt\Qt5.9.2\5.9.2\msvc2015_64\include\QtWidgets /Zi /nologo /W1 /WX- /MP /O2 /D UNICODE /D _UNICODE /D WIN32 /D WIN64 /D QT_NO_DEBUG /D NDEBUG /D QTSEARCHWINDOW_LIB /D _WINDLL /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt GeneratedFiles\Release\moc_BrowseDlg.cpp GeneratedFiles\Release\moc_QtNewWindow.cpp GeneratedFiles\Release\moc_QtSearchWindow.cpp
+         moc_BrowseDlg.cpp
+         moc_QtNewWindow.cpp
+         moc_QtSearchWindow.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"x64\Release\app.res" app.rc 
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"x64\Release\QtSearchWindow.res" QtSearchWindow.rc 
+       Link:
+         D:\ProgramFiles\VisualStudio\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\\QtSearchWindow.dll" /NOLOGO /LIBPATH:D:\ProgramFiles\Qt\Qt5.9.2\5.9.2\msvc2015_64\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Sql.lib Qt5Widgets.lib Qt5AxContainer.lib Qt5AxBase.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\QtSearchWindow.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\QtSearchWindow.lib" /MACHINE:X64 /DLL x64\Release\app.res
+         x64\Release\QtSearchWindow.res
+         x64\Release\BrowseDlg.obj
+         x64\Release\QSearchWindowControl.obj
+         x64\Release\QtNewWindow.obj
+         x64\Release\QtSearchWindow.obj
+         x64\Release\moc_BrowseDlg.obj
+         x64\Release\moc_QtNewWindow.obj
+         x64\Release\moc_QtSearchWindow.obj
+           正在创建库 E:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\QtSearchWindow.lib 和对象 E:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\QtSearchWindow.exp
+         QtSearchWindow.vcxproj -> E:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\QtSearchWindow.dll
+     1>已完成生成项目“E:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow\QtSearchWindow.vcxproj”(Build 个目标)的操作。
+     1>已完成生成项目“E:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow\QtSearchWindow.vcxproj”(Rebuild 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:04.32
