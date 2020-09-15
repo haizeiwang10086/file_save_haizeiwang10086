@@ -27,12 +27,6 @@ DocManagement::DocManagement(QWidget *parent)
     {
         QMessageBox::warning(this, "警告", "QtSearchWindow.dll加载失败！");
     }
-    pSechWindow = (SechWindow)GetProcAddress(hDllSech, "createSearchWindow");
-    pFreeSechWND = (FreeSechWindow)GetProcAddress(hDllSech, "freeSearchWindow");
-    if(NULL == pSechWindow)
-    {
-        QMessageBox::warning(this, "警告", "动态库内部函数调用失败！");
-    }
 
     //btnSign.setParent(this);
     QToolBar *pQtr = addToolBar("tool bar");
@@ -74,7 +68,7 @@ DocManagement::DocManagement(QWidget *parent)
 	ui.tabWidget->addTab(fileManager, QString::fromUtf16(u"文件管理"));
     questWnd = new QQuestWindowControl(this);
     ui.tabWidget->addTab(questWnd, QString::fromUtf16(u"问题查询"));
-    sechWnd = pSechWindow(this);
+    sechWnd = new QSearchWindowControl(this);
     ui.tabWidget->addTab(sechWnd, QString::fromUtf16(u"信息查询"));
     imgToolWnd = new ImageToolDlgControl(this);
     ui.tabWidget->addTab(imgToolWnd, QString::fromUtf16(u"图像工具"));

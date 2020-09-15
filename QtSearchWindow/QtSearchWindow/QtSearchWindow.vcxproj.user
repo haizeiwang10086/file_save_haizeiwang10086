@@ -6,14 +6,14 @@
     <LocalDebuggerEnvironment>PATH=$(QTDIR)\bin%3b$(QTDIRX86)\bin%3b$(PATH)</LocalDebuggerEnvironment>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <QTDIR>D:\ProgramFiles\Qt\Qt5.9.2\5.9.2\msvc2015_64</QTDIR>
+    <QTDIR>D:\ProgramFiles\Qt\5.9.2\msvc2015_64</QTDIR>
     <LocalDebuggerCommand>E:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Debug\DocManagement.exe</LocalDebuggerCommand>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerWorkingDirectory>$(SolutionDir)$(Platform)\$(Configuration)\</LocalDebuggerWorkingDirectory>
     <LocalDebuggerEnvironment>PATH=$(QTDIR)\bin%3b$(QTDIRX86)\bin%3b$(PATH)</LocalDebuggerEnvironment>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <QTDIR>D:\ProgramFiles\Qt\Qt5.9.2\5.9.2\msvc2015_64</QTDIR>
+    <QTDIR>D:\ProgramFiles\Qt\5.9.2\msvc2015_64</QTDIR>
     <LocalDebuggerCommand>E:\workspace\file_save_haizeiwang10086\QtSearchWindow\x64\Release\DocManagement.exe</LocalDebuggerCommand>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerWorkingDirectory>$(SolutionDir)$(Platform)\$(Configuration)\</LocalDebuggerWorkingDirectory>

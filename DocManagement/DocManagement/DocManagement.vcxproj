@@ -175,6 +175,10 @@
     <ClCompile Include="ImageToolDlgControl.cpp" />
     <ClCompile Include="ImageWidget.cpp" />
     <ClCompile Include="ImageWindowWidget.cpp" />
+    <ClCompile Include="MsgBackupWindow.cpp" />
+    <ClCompile Include="MsgBackupWindowControl.cpp" />
+    <ClCompile Include="MsgBrowseDlg.cpp" />
+    <ClCompile Include="MsgNewWindow.cpp" />
     <ClCompile Include="QuestionBrowseDlg.cpp" />
     <ClCompile Include="CustomTabStyle.cpp" />
     <ClCompile Include="DataBaseLinkDialog.cpp" />
@@ -233,6 +237,41 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_ImageToolDlg.h" />
+    <QtMoc Include="MsgBackupWindow.h">
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Qt_DEFINES_);%(PreprocessorDefinitions)</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QT_DIR_VS)\include;.\GeneratedFiles\$(ConfigurationName);$(QT_DIR_VS)\include\QtCore;$(QT_DIR_VS)\include\QtGui;$(QT_DIR_VS)\include\QtSql;$(QT_DIR_VS)\include\QtWidgets</IncludePath>
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);E:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow;E:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow\GeneratedFiles</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Qt_DEFINES_);%(PreprocessorDefinitions)</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIRVS)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIRVS)\include\QtCore;$(QTDIRVS)\include\QtGui;$(QTDIRVS)\include\QtSql;$(QTDIRVS)\include\QtWidgets;D:\ProgramFiles\Opencv430\opencv\build\include</IncludePath>
+    </QtMoc>
+    <ClInclude Include="GeneratedFiles\ui_MsgBackupWindow.h" />
+    <ClInclude Include="GeneratedFiles\ui_MsgBrowse.h" />
+    <ClInclude Include="GeneratedFiles\ui_MsgNew.h" />
+    <ClInclude Include="MsgBackupWindowControl.h" />
+    <QtMoc Include="MsgNewWindow.h">
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Qt_DEFINES_);%(PreprocessorDefinitions)</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QT_DIR_VS)\include;.\GeneratedFiles\$(ConfigurationName);$(QT_DIR_VS)\include\QtCore;$(QT_DIR_VS)\include\QtGui;$(QT_DIR_VS)\include\QtSql;$(QT_DIR_VS)\include\QtWidgets</IncludePath>
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);E:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow;E:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow\GeneratedFiles</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Qt_DEFINES_);%(PreprocessorDefinitions)</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIRVS)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIRVS)\include\QtCore;$(QTDIRVS)\include\QtGui;$(QTDIRVS)\include\QtSql;$(QTDIRVS)\include\QtWidgets;D:\ProgramFiles\Opencv430\opencv\build\include</IncludePath>
+    </QtMoc>
+    <QtMoc Include="MsgBrowseDlg.h">
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Qt_DEFINES_);%(PreprocessorDefinitions)</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QT_DIR_VS)\include;.\GeneratedFiles\$(ConfigurationName);$(QT_DIR_VS)\include\QtCore;$(QT_DIR_VS)\include\QtGui;$(QT_DIR_VS)\include\QtSql;$(QT_DIR_VS)\include\QtWidgets</IncludePath>
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);E:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow;E:\workspace\file_save_haizeiwang10086\QtSearchWindow\QtSearchWindow\GeneratedFiles</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Qt_DEFINES_);%(PreprocessorDefinitions)</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIRVS)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIRVS)\include\QtCore;$(QTDIRVS)\include\QtGui;$(QTDIRVS)\include\QtSql;$(QTDIRVS)\include\QtWidgets;D:\ProgramFiles\Opencv430\opencv\build\include</IncludePath>
+    </QtMoc>
+    <ClInclude Include="MsgBackupWindowVirtualBase.h" />
     <ClInclude Include="Utils.h" />
     <QtMoc Include="SetWndNum.h">
       <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc'ing %(Identity)...</ExecutionDescription>
@@ -349,7 +388,19 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="MsgBrowse.ui">
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+    </QtUic>
     <QtUic Include="ImageToolDlg.ui">
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+    </QtUic>
+    <QtUic Include="MsgNew.ui">
       <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic'ing %(Identity)...</ExecutionDescription>
       <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h</OutputFile>
       <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic'ing %(Identity)...</ExecutionDescription>
@@ -411,6 +462,12 @@
       <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h</OutputFile>
     </QtUic>
     <QtUic Include="ResizeWindow.ui">
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+    </QtUic>
+    <QtUic Include="MsgBackupWindow.ui">
       <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic'ing %(Identity)...</ExecutionDescription>
       <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h</OutputFile>
       <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic'ing %(Identity)...</ExecutionDescription>

@@ -1,8 +1,1 @@
-﻿qtmain.lib(qtmain_win.obj) : warning LNK4099: 未找到 PDB“qtmain.pdb”(使用“qtmain.lib(qtmain_win.obj)”或在“E:\file_save_haizeiwang10086\DocManagement\x64\Release\qtmain.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-Qt5AxContainer.lib(qaxbase.obj) : warning LNK4099: 未找到 PDB“Qt5AxContainer.pdb”(使用“Qt5AxContainer.lib(qaxbase.obj)”或在“E:\file_save_haizeiwang10086\DocManagement\x64\Release\Qt5AxContainer.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-Qt5AxContainer.lib(qaxwidget.obj) : warning LNK4099: 未找到 PDB“Qt5AxContainer.pdb”(使用“Qt5AxContainer.lib(qaxwidget.obj)”或在“E:\file_save_haizeiwang10086\DocManagement\x64\Release\Qt5AxContainer.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-Qt5AxContainer.lib(qaxobject.obj) : warning LNK4099: 未找到 PDB“Qt5AxContainer.pdb”(使用“Qt5AxContainer.lib(qaxobject.obj)”或在“E:\file_save_haizeiwang10086\DocManagement\x64\Release\Qt5AxContainer.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-Qt5AxContainer.lib(qaxtypes.obj) : warning LNK4099: 未找到 PDB“Qt5AxContainer.pdb”(使用“Qt5AxContainer.lib(qaxtypes.obj)”或在“E:\file_save_haizeiwang10086\DocManagement\x64\Release\Qt5AxContainer.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-Qt5AxContainer.lib(qaxutils.obj) : warning LNK4099: 未找到 PDB“Qt5AxContainer.pdb”(使用“Qt5AxContainer.lib(qaxutils.obj)”或在“E:\file_save_haizeiwang10086\DocManagement\x64\Release\Qt5AxContainer.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-Qt5AxBase.lib(qaxtypefunctions.obj) : warning LNK4099: 未找到 PDB“Qt5AxBase.pdb”(使用“Qt5AxBase.lib(qaxtypefunctions.obj)”或在“E:\file_save_haizeiwang10086\DocManagement\x64\Release\Qt5AxBase.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-  DocManagement.vcxproj -> E:\file_save_haizeiwang10086\DocManagement\x64\Release\DocManagement.exe
+﻿  DocManagement.vcxproj -> E:\file_save_haizeiwang10086\DocManagement\x64\Release\DocManagement.exe

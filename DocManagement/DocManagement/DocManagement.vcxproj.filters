@@ -115,6 +115,18 @@
     <ClCompile Include="ImageToolDlgControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MsgBackupWindowControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgBackupWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgNewWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgBrowseDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="DocManagement.h">
@@ -206,6 +218,21 @@
     <ClInclude Include="ImageToolDlgControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MsgBackupWindowControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_MsgBrowse.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_MsgNew.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_MsgBackupWindow.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgBackupWindowVirtualBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="BatchEditFileName.ui">
@@ -247,6 +274,15 @@
     <QtUic Include="ImageToolDlg.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="MsgBackupWindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="MsgBrowse.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="MsgNew.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="BatchEditName.h">
@@ -280,6 +316,15 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="ImageWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="MsgBackupWindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="MsgNewWindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="MsgBrowseDlg.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
